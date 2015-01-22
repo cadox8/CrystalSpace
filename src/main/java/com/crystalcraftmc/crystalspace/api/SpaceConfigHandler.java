@@ -11,8 +11,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.World;
 
-import java.net.URI;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -26,6 +24,7 @@ import java.util.logging.Level;
  *
  * @author iffa
  * @author Jack
+ * @author jflory7
  */
 public class SpaceConfigHandler {
 
@@ -118,71 +117,6 @@ public class SpaceConfigHandler {
             return (String) ARMOR_TYPE.getDefault();
         }
         return SpaceConfig.getConfig(ConfigFile.CONFIG).getString("global.armortype", (String) ARMOR_TYPE.getDefault());
-    }
-
-    /**
-     * Checks if Spout will be used.
-     *
-     * @return true if Spout is used
-     */
-    public static boolean isUsingSpout() {
-        return SpaceConfig.getConfig(ConfigFile.CONFIG).getBoolean("global.spout.use", (Boolean) USE_SPOUT.getDefault());
-    }
-
-    /**
-     * Gets the spout texture pack url.
-     *
-     * @return Url of the texture used in the config, or the default
-     */
-    public static String getSpoutTexturePack() {
-        String texture = SpaceConfig.getConfig(ConfigFile.CONFIG).getString("global.spout.texturepack", (String) TEXTURE_PACK.getDefault());
-        try {
-            URL url = new URL(texture);
-            URI toURI = url.toURI();
-            url.openConnection();
-        } catch (Exception ex) {
-            MessageHandler.debugPrint(Level.WARNING, "Failed to get texture pack from URL: " + ex.toString());
-        }
-        return texture.isEmpty() ? (String) TEXTURE_PACK.getDefault() : texture;
-    }
-
-    public static String getBlackHoleTexture() {
-        String texture = SpaceConfig.getConfig(ConfigFile.CONFIG).getString("global.spout.blackhole-texture", (String) BLACKHOLE_TEXTURE.getDefault());
-        try {
-            URL url = new URL(texture);
-            URI toURI = url.toURI();
-            url.openConnection();
-        } catch (Exception ex) {
-            MessageHandler.debugPrint(Level.WARNING, "Failed to get black hole texture from URL: " + ex.toString());
-        }
-        return texture.isEmpty() ? (String) BLACKHOLE_TEXTURE.getDefault() : texture;
-    }
-
-    /**
-     * Gets the use texture pack value.
-     *
-     * @return True if using the texture pack
-     */
-    public static boolean getTexturePackEnabled() {
-        return SpaceConfig.getConfig(ConfigFile.CONFIG).getBoolean("global.spout.usetp", (Boolean) USE_TEXTURE_PACK.getDefault());
-    }
-
-    /**
-     * Gets the clouds enabled value.
-     *
-     * @return True if clouds enabled
-     */
-    public static boolean getCloudsEnabled() {
-        return SpaceConfig.getConfig(ConfigFile.CONFIG).getBoolean("global.spout.clouds", (Boolean) CLOUDS.getDefault());
-    }
-
-    /**
-     * Gets the gravity value.
-     *
-     * @return True if gravity enabled
-     */
-    public static boolean getGravityEnabled() {
-        return SpaceConfig.getConfig(ConfigFile.CONFIG).getBoolean("global.spout.gravity", (Boolean) GRAVITY.getDefault());
     }
 
     /**
