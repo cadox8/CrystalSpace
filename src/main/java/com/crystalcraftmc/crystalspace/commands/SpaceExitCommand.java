@@ -1,30 +1,27 @@
 // Package Declaration
 package com.crystalcraftmc.crystalspace.commands;
 
-// Java Imports
-
 import com.crystalcraftmc.crystalspace.Space;
 import com.crystalcraftmc.crystalspace.economy.Economy;
-import com.crystalcraftmc.crystalspace.handlers.*;
+import com.crystalcraftmc.crystalspace.handlers.LangHandler;
+import com.crystalcraftmc.crystalspace.handlers.MessageHandler;
+import com.crystalcraftmc.crystalspace.handlers.PlayerHandler;
+import com.crystalcraftmc.crystalspace.handlers.WorldHandler;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.getspout.spoutapi.player.SpoutPlayer;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
 
-// bSpace Imports
-// Bukkit Imports
-// Spout Imports
-
 /**
  * Represents "/space back".
  * 
  * @author iffa
+ * @author jflory7
  */
 public class SpaceExitCommand extends SpaceCommand {
     // Variables
@@ -59,9 +56,6 @@ public class SpaceExitCommand extends SpaceCommand {
                     location = SpaceEnterCommand.exitDest.get(player);
                     MessageHandler.debugPrint(Level.INFO, "Teleported player '" + player.getName() + "' out of space.");
                     player.teleport(location);
-                    if (Bukkit.getPluginManager().getPlugin("Spout") != null) {
-                        SpoutHandler.setOrReset(getPlugin(), (SpoutPlayer)player, location);
-                    }
                     return;
                 } else {
                     SpaceEnterCommand.exitDest.put(player, Bukkit.getServer().getWorlds().get(0).getSpawnLocation());

@@ -1,8 +1,6 @@
 // Package Declaration
 package com.crystalcraftmc.crystalspace;
 
-// Java Imports
-
 import com.crystalcraftmc.crystalspace.api.SpaceAddon;
 import com.crystalcraftmc.crystalspace.api.schematic.SpaceSchematicHandler;
 import com.crystalcraftmc.crystalspace.commands.SpaceCommandHandler;
@@ -14,9 +12,7 @@ import com.crystalcraftmc.crystalspace.listeners.SpaceEconomyListener;
 import com.crystalcraftmc.crystalspace.listeners.SpaceEntityListener;
 import com.crystalcraftmc.crystalspace.listeners.SpacePlayerListener;
 import com.crystalcraftmc.crystalspace.listeners.SpaceSuffocationListener;
-import com.crystalcraftmc.crystalspace.listeners.misc.BlackHolePlayerListener;
 import com.crystalcraftmc.crystalspace.listeners.misc.SpaceWorldListener;
-import com.crystalcraftmc.crystalspace.listeners.spout.*;
 import com.crystalcraftmc.crystalspace.wgen.planets.PlanetsChunkGenerator;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
@@ -30,9 +26,6 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
-
-// bSpace Imports
-// Bukkit Imports
 
 /**
  * Main class of bSpace.
@@ -134,13 +127,10 @@ public class Space extends JavaPlugin {
         pm = getServer().getPluginManager();
         version = getDescription().getVersion();
         prefix = "[" + getDescription().getName() + "]";
-        if (pm.getPlugin("Spout") != null && ConfigHandler.isUsingSpout()) {
-            locCache = new HashMap<Player, Location>();
-        }
     }
 
     /**
-     * Registers events for bSpace.
+     * Registers events for CrystalSpace.
      */
     private void registerEvents() {
         // Registering other events.
@@ -153,17 +143,6 @@ public class Space extends JavaPlugin {
         pm.registerEvents(suffocationListener, this);
         pm.registerEvents(economyListener, this);
         MessageHandler.debugPrint(Level.INFO, "Registered events (entity & player).");
-
-        // Registering events for Spout.
-        if (pm.getPlugin("Spout") != null && pm.getPlugin("Spout").isEnabled() && ConfigHandler.isUsingSpout()) {
-            pm.registerEvents(new SpaceSpoutPlayerListener(this), this);
-            pm.registerEvents(new SpaceSpoutEntityListener(), this);
-            pm.registerEvents(new SpaceSpoutCraftListener(), this);
-            pm.registerEvents(new SpaceSpoutAreaListener(), this);
-            pm.registerEvents(new SpaceSpoutKeyListener(), this);
-            pm.registerEvents(new BlackHolePlayerListener(), this);
-            MessageHandler.debugPrint(Level.INFO, "Registered events (Spout).");
-        }
     }
 
     /**

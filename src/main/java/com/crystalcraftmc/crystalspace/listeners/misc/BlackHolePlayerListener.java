@@ -4,9 +4,7 @@ package com.crystalcraftmc.crystalspace.listeners.misc;
 // Java Imports
 
 import com.crystalcraftmc.crystalspace.handlers.ConfigHandler;
-import com.crystalcraftmc.crystalspace.handlers.SpoutHandler;
 import com.crystalcraftmc.crystalspace.handlers.WorldHandler;
-import com.crystalcraftmc.crystalspace.runnables.SpoutBlackHoleChaosRunnable;
 import com.crystalcraftmc.crystalspace.wgen.populators.SpaceBlackHolePopulator;
 import org.bukkit.Bukkit;
 import org.bukkit.Chunk;
@@ -38,7 +36,7 @@ public class BlackHolePlayerListener implements Listener {
     private static Map<Chunk, Boolean> scannedNonSpout = new HashMap<Chunk, Boolean>();
     private static final int SIZE = 20;
     private static long lastTime = System.currentTimeMillis();
-    private static List<Block> nonSpoutBlocks = new ArrayList<Block>();//To be used if not using spout and black holes is on
+    private static List<Block> nonSpoutBlocks = new ArrayList<Block>(); //To be used if not using Spout and black holes is on
 
     /**
      * Called when a player attempts to move.
@@ -51,18 +49,6 @@ public class BlackHolePlayerListener implements Listener {
         long currentTime = System.currentTimeMillis();
         if (!(lastTime + 200 <= currentTime)) return;
         lastTime = System.currentTimeMillis();
-
-	    if(ConfigHandler.getGenerateBlackHolesNonSpout(ConfigHandler.getID(event.getTo().getWorld()))){
-	        checkBlocksNonSpout(event.getTo());
-	        for (Block block : nonSpoutBlocks) {
-		        if (SpoutHandler.isInsideRadius(event.getPlayer(), block.getLocation(), SIZE) && !runnables.containsKey(event.getPlayer())) {
-                    int taskId = Bukkit.getScheduler().scheduleSyncRepeatingTask(Bukkit.getPluginManager().getPlugin("bSpace"), new SpoutBlackHoleChaosRunnable(event.getPlayer(), block), 0, (long) 1); //Period
-                    runnables.put(event.getPlayer(), taskId);
-                    event.getPlayer().sendMessage("Black hole. -bam-, you're dead.");
-                    return;
-		        }
-	        }
-	    }
     }
     
     @EventHandler(priority = EventPriority.MONITOR)

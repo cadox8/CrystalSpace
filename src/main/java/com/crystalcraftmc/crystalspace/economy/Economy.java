@@ -1,8 +1,6 @@
 // Package Declaration
 package com.crystalcraftmc.crystalspace.economy;
 
-// Register Imports
-
 import com.crystalcraftmc.crystalspace.config.SpaceConfig;
 import com.crystalcraftmc.crystalspace.config.SpaceConfig.ConfigFile;
 import com.crystalcraftmc.crystalspace.handlers.MessageHandler;
@@ -14,10 +12,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
 import java.util.logging.Level;
-
-// Java Imports
-// bSpace Imports
-// Bukkit Imports
 
 /**
  * Handles economy using Register.
