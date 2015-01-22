@@ -48,7 +48,8 @@ public class SpaceConfigHandler {
      * @return true if debugging mode is enabled
      */
     public static boolean getDebugging() {
-        return SpaceConfig.getConfig(ConfigFile.CONFIG).getBoolean("debug", (Boolean) DEBUGGING.getDefault());
+        return SpaceConfig.getConfig(ConfigFile.CONFIG).getBoolean("debug");
+        //return SpaceConfig.getConfig(ConfigFile.CONFIG).getBoolean("debug", (Boolean) DEBUGGING.getDefault());
     }
 
     /**
@@ -57,7 +58,8 @@ public class SpaceConfigHandler {
      * @return true if a helmet is given when teleporting to this world
      */
     public static boolean isHelmetGiven() {
-        return SpaceConfig.getConfig(ConfigFile.CONFIG).getBoolean("global.givehelmet", (Boolean) HELMET_GIVEN.getDefault());
+        return SpaceConfig.getConfig(ConfigFile.CONFIG).getBoolean("global.givehelmet");
+        //return SpaceConfig.getConfig(ConfigFile.CONFIG).getBoolean("global.givehelmet", (Boolean) HELMET_GIVEN.getDefault());
     }
 
     /**
@@ -66,7 +68,8 @@ public class SpaceConfigHandler {
      * @return true if a suit is given when teleporting to this world
      */
     public static boolean isSuitGiven() {
-        return SpaceConfig.getConfig(ConfigFile.CONFIG).getBoolean("global.givesuit", (Boolean) SUIT_GIVEN.getDefault());
+        return SpaceConfig.getConfig(ConfigFile.CONFIG).getBoolean("global.givesuit");
+        //return SpaceConfig.getConfig(ConfigFile.CONFIG).getBoolean("global.givesuit", (Boolean) SUIT_GIVEN.getDefault());
     }
 
     /**
@@ -75,7 +78,8 @@ public class SpaceConfigHandler {
      * @return string of id or name
      */
     public static String getHelmet() {
-        return SpaceConfig.getConfig(ConfigFile.CONFIG).getString("global.helmet", (String) HELMET.getDefault());
+        return SpaceConfig.getConfig(ConfigFile.CONFIG).getString("global.helmet");
+        //return SpaceConfig.getConfig(ConfigFile.CONFIG).getString("global.helmet", (String) HELMET.getDefault());
     }
 
     /**
@@ -84,7 +88,8 @@ public class SpaceConfigHandler {
      * @return string of id or name
      */
     public static String getChestPlate() {
-        return SpaceConfig.getConfig(ConfigFile.CONFIG).getString("global.chestplate", (String) CHESTPLATE.getDefault());
+        return SpaceConfig.getConfig(ConfigFile.CONFIG).getString("global.chestplate");
+        //return SpaceConfig.getConfig(ConfigFile.CONFIG).getString("global.chestplate", (String) CHESTPLATE.getDefault());
     }
 
     /**
@@ -93,7 +98,8 @@ public class SpaceConfigHandler {
      * @return string of id or name
      */
     public static String getLeggings() {
-        return SpaceConfig.getConfig(ConfigFile.CONFIG).getString("global.leggings", (String) LEGGINGS.getDefault());
+        return SpaceConfig.getConfig(ConfigFile.CONFIG).getString("global.leggings");
+        //return SpaceConfig.getConfig(ConfigFile.CONFIG).getString("global.leggings", (String) LEGGINGS.getDefault());
     }
 
     /**
@@ -102,7 +108,8 @@ public class SpaceConfigHandler {
      * @return string of id or name
      */
     public static String getBoots() {
-        return SpaceConfig.getConfig(ConfigFile.CONFIG).getString("global.boots", (String) BOOTS.getDefault());
+        return SpaceConfig.getConfig(ConfigFile.CONFIG).getString("global.boots");
+        //return SpaceConfig.getConfig(ConfigFile.CONFIG).getString("global.boots", (String) BOOTS.getDefault());
     }
 
     /**
@@ -111,12 +118,15 @@ public class SpaceConfigHandler {
      * @return armortype string
      */
     public static String getArmorType() {
-        String armorType = SpaceConfig.getConfig(ConfigFile.CONFIG).getString("global.armortype", (String) ARMOR_TYPE.getDefault());
+        String armorType = SpaceConfig.getConfig(ConfigFile.CONFIG).getString("global.armortype");
+        //String armorType = SpaceConfig.getConfig(ConfigFile.CONFIG).getString("global.armortype", (String) ARMOR_TYPE.getDefault());
         if (!"id".equals(armorType) && Material.matchMaterial(armorType + "_HELMET") == null) {
             MessageHandler.print(Level.SEVERE, "Invalid armortype '" + SpaceConfig.getConfig(ConfigFile.CONFIG).getString("global.armortype") + "' in config!");
-            return (String) ARMOR_TYPE.getDefault();
+            return SpaceConfig.getConfig(ConfigFile.CONFIG).getString("global.armortype");
+            //return (String) ARMOR_TYPE.getDefault();
         }
-        return SpaceConfig.getConfig(ConfigFile.CONFIG).getString("global.armortype", (String) ARMOR_TYPE.getDefault());
+        return SpaceConfig.getConfig(ConfigFile.CONFIG).getString("global.armortype");
+        //return SpaceConfig.getConfig(ConfigFile.CONFIG).getString("global.armortype", (String) ARMOR_TYPE.getDefault());
     }
 
     /**
@@ -125,7 +135,8 @@ public class SpaceConfigHandler {
      * @return True if gravity enabled
      */
     public static boolean getStopDrowning() {
-        return SpaceConfig.getConfig(ConfigFile.CONFIG).getBoolean("global.drowning.stopdrowning", (Boolean) STOPDROWNING.getDefault());
+        return SpaceConfig.getConfig(ConfigFile.CONFIG).getBoolean("global.drowning.stopdrowning");
+        //return SpaceConfig.getConfig(ConfigFile.CONFIG).getBoolean("global.drowning.stopdrowning", (Boolean) STOPDROWNING.getDefault());
     }
 
     /**
@@ -167,9 +178,11 @@ public class SpaceConfigHandler {
      */
     public static boolean getRequireHelmet(String id) {
         if (id.equalsIgnoreCase("planets")) {
-            return (Boolean) REQUIRE_HELMET.getDefault();
+            return SpaceConfig.getConfig(ConfigFile.IDS).getBoolean("ids." + id + ".helmet.required");
+            //return (Boolean) REQUIRE_HELMET.getDefault();
         }
-        return SpaceConfig.getConfig(ConfigFile.IDS).getBoolean("ids." + id + ".helmet.required", (Boolean) REQUIRE_HELMET.getDefault());
+        return SpaceConfig.getConfig(ConfigFile.IDS).getBoolean("ids." + id + ".helmet.required");
+        //return SpaceConfig.getConfig(ConfigFile.IDS).getBoolean("ids." + id + ".helmet.required", (Boolean) REQUIRE_HELMET.getDefault());
     }
 
     /**
@@ -181,9 +194,11 @@ public class SpaceConfigHandler {
      */
     public static boolean getRequireSuit(String id) {
         if (id.equalsIgnoreCase("planets")) {
-            return (Boolean) REQUIRE_SUIT.getDefault();
+            return SpaceConfig.getConfig(ConfigFile.IDS).getBoolean("ids." + id + ".suit.required");
+            //return (Boolean) REQUIRE_SUIT.getDefault();
         }
-        return SpaceConfig.getConfig(ConfigFile.IDS).getBoolean("ids." + id + ".suit.required", (Boolean) REQUIRE_SUIT.getDefault());
+        return SpaceConfig.getConfig(ConfigFile.IDS).getBoolean("ids." + id + ".suit.required");
+        //return SpaceConfig.getConfig(ConfigFile.IDS).getBoolean("ids." + id + ".suit.required", (Boolean) REQUIRE_SUIT.getDefault());
     }
 
     /**
@@ -195,9 +210,11 @@ public class SpaceConfigHandler {
      */
     public static boolean forceNight(String id) {
         if (id.equalsIgnoreCase("planets")) {
-            return (Boolean) FORCE_NIGHT.getDefault();
+            return SpaceConfig.getConfig(ConfigFile.IDS).getBoolean("ids." + id + ".alwaysnight");
+            //return (Boolean) FORCE_NIGHT.getDefault();
         }
-        return SpaceConfig.getConfig(ConfigFile.IDS).getBoolean("ids." + id + ".alwaysnight", (Boolean) FORCE_NIGHT.getDefault());
+        return SpaceConfig.getConfig(ConfigFile.IDS).getBoolean("ids." + id + ".alwaysnight");
+        //return SpaceConfig.getConfig(ConfigFile.IDS).getBoolean("ids." + id + ".alwaysnight", (Boolean) FORCE_NIGHT.getDefault());
     }
 
     /**
@@ -209,9 +226,11 @@ public class SpaceConfigHandler {
      */
     public static int getRoomHeight(String id) {
         if (id.equalsIgnoreCase("planets")) {
-            return (Integer) ROOM_HEIGHT.getDefault();
+            return SpaceConfig.getConfig(ConfigFile.IDS).getInt("ids." + id + ".maxroomheight");
+            //return (Integer) ROOM_HEIGHT.getDefault();
         }
-        return SpaceConfig.getConfig(ConfigFile.IDS).getInt("ids." + id + ".maxroomheight", (Integer) ROOM_HEIGHT.getDefault());
+        return SpaceConfig.getConfig(ConfigFile.IDS).getInt("ids." + id + ".maxroomheight");
+        //return SpaceConfig.getConfig(ConfigFile.IDS).getInt("ids." + id + ".maxroomheight", (Integer) ROOM_HEIGHT.getDefault());
     }
 
     /**
@@ -223,9 +242,11 @@ public class SpaceConfigHandler {
      */
     public static int getGlowstoneChance(String id) {
         if (id.equalsIgnoreCase("planets")) {
-            return (Integer) GLOWSTONE_CHANCE.getDefault();
+            return SpaceConfig.getConfig(ConfigFile.IDS).getInt("ids." + id + ".generation.glowstonechance");
+            //return (Integer) GLOWSTONE_CHANCE.getDefault();
         }
-        return SpaceConfig.getConfig(ConfigFile.IDS).getInt("ids." + id + ".generation.glowstonechance", (Integer) GLOWSTONE_CHANCE.getDefault());
+        return SpaceConfig.getConfig(ConfigFile.IDS).getInt("ids." + id + ".generation.glowstonechance");
+        //return SpaceConfig.getConfig(ConfigFile.IDS).getInt("ids." + id + ".generation.glowstonechance", (Integer) GLOWSTONE_CHANCE.getDefault());
     }
 
     /**
@@ -237,9 +258,11 @@ public class SpaceConfigHandler {
      */
     public static int getStoneChance(String id) {
         if (id.equalsIgnoreCase("planets")) {
-            return (Integer) STONE_CHANCE.getDefault();
+            return SpaceConfig.getConfig(ConfigFile.IDS).getInt("ids." + id + ".generation.stonechance");
+            //return (Integer) STONE_CHANCE.getDefault();
         }
-        return SpaceConfig.getConfig(ConfigFile.IDS).getInt("ids." + id + ".generation.stonechance", (Integer) STONE_CHANCE.getDefault());
+        return SpaceConfig.getConfig(ConfigFile.IDS).getInt("ids." + id + ".generation.stonechance");
+        //return SpaceConfig.getConfig(ConfigFile.IDS).getInt("ids." + id + ".generation.stonechance", (Integer) STONE_CHANCE.getDefault());
     }
 
     /**
@@ -251,9 +274,11 @@ public class SpaceConfigHandler {
      */
     public static boolean getAsteroidsEnabled(String id) {
         if (id.equalsIgnoreCase("planets")) {
-            return (Boolean) ASTEROIDS_ENABLED.getDefault();
+            return SpaceConfig.getConfig(ConfigFile.IDS).getBoolean("ids." + id + ".generation.generateasteroids");
+            //return (Boolean) ASTEROIDS_ENABLED.getDefault();
         }
-        return SpaceConfig.getConfig(ConfigFile.IDS).getBoolean("ids." + id + ".generation.generateasteroids", (Boolean) ASTEROIDS_ENABLED.getDefault());
+        return SpaceConfig.getConfig(ConfigFile.IDS).getBoolean("ids." + id + ".generation.generateasteroids");
+        //return SpaceConfig.getConfig(ConfigFile.IDS).getBoolean("ids." + id + ".generation.generateasteroids", (Boolean) ASTEROIDS_ENABLED.getDefault());
     }
 
     /**
@@ -265,9 +290,11 @@ public class SpaceConfigHandler {
      */
     public static boolean getSatellitesEnabled(String id) {
         if (id.equalsIgnoreCase("planets")) {
-            return (Boolean) SATELLITES_ENABLED.getDefault();
+            return SpaceConfig.getConfig(ConfigFile.IDS).getBoolean("ids." + id + ".generation.generatesatellites");
+            //return (Boolean) SATELLITES_ENABLED.getDefault();
         }
-        return SpaceConfig.getConfig(ConfigFile.IDS).getBoolean("ids." + id + ".generation.generatesatellites", (Boolean) SATELLITES_ENABLED.getDefault());
+        return SpaceConfig.getConfig(ConfigFile.IDS).getBoolean("ids." + id + ".generation.generatesatellites");
+        //return SpaceConfig.getConfig(ConfigFile.IDS).getBoolean("ids." + id + ".generation.generatesatellites", (Boolean) SATELLITES_ENABLED.getDefault());
     }
 
     /**
@@ -279,9 +306,11 @@ public class SpaceConfigHandler {
      */
     public static int getSatelliteChance(String id) {
         if (id.equalsIgnoreCase("planets")) {
-            return (Integer) SATELLITE_CHANCE.getDefault();
+            return SpaceConfig.getConfig(ConfigFile.IDS).getInt("ids." + id + ".generation.satellitechance");
+            //return (Integer) SATELLITE_CHANCE.getDefault();
         }
-        return SpaceConfig.getConfig(ConfigFile.IDS).getInt("ids." + id + ".generation.satellitechance", (Integer) SATELLITE_CHANCE.getDefault());
+        return SpaceConfig.getConfig(ConfigFile.IDS).getInt("ids." + id + ".generation.satellitechance");
+        //return SpaceConfig.getConfig(ConfigFile.IDS).getInt("ids." + id + ".generation.satellitechance", (Integer) SATELLITE_CHANCE.getDefault());
     }
 
     /**
@@ -293,9 +322,11 @@ public class SpaceConfigHandler {
      */
     public static boolean getGeneratePlanets(String id) {
         if (id.equalsIgnoreCase("planets")) {
-            return (Boolean) GENERATE_PLANETS.getDefault();
+            return SpaceConfig.getConfig(ConfigFile.IDS).getBoolean("ids." + id + ".generation.generateplanets");
+            //return (Boolean) GENERATE_PLANETS.getDefault();
         }
-        return SpaceConfig.getConfig(ConfigFile.IDS).getBoolean("ids." + id + ".generation.generateplanets", (Boolean) GENERATE_PLANETS.getDefault());
+        return SpaceConfig.getConfig(ConfigFile.IDS).getBoolean("ids." + id + ".generation.generateplanets");
+        //return SpaceConfig.getConfig(ConfigFile.IDS).getBoolean("ids." + id + ".generation.generateplanets", (Boolean) GENERATE_PLANETS.getDefault());
     }
 
     /**
@@ -306,7 +337,8 @@ public class SpaceConfigHandler {
      * @return True if generateschematics=true
      */
     public static boolean getGenerateSchematics(String id) {
-        return SpaceConfig.getConfig(ConfigFile.IDS).getBoolean("ids." + id + ".generation.generateschematics", (Boolean) GENERATE_SCHEMATICS.getDefault());
+        return SpaceConfig.getConfig(ConfigFile.IDS).getBoolean("ids." + id + ".generation.generateschematics");
+        //return SpaceConfig.getConfig(ConfigFile.IDS).getBoolean("ids." + id + ".generation.generateschematics", (Boolean) GENERATE_SCHEMATICS.getDefault());
     }
 
     /**
@@ -318,24 +350,13 @@ public class SpaceConfigHandler {
      */
     public static int getSchematicChance(String id) {
         if (id.equalsIgnoreCase("planets")) {
-            return (Integer) SCHEMATIC_CHANCE.getDefault();
+            return SpaceConfig.getConfig(ConfigFile.IDS).getInt("ids." + id + ".generation.schematicchance");
+            //return (Integer) SCHEMATIC_CHANCE.getDefault();
         }
-        return SpaceConfig.getConfig(ConfigFile.IDS).getInt("ids." + id + ".generation.schematicchance", (Integer) SCHEMATIC_CHANCE.getDefault());
+        return SpaceConfig.getConfig(ConfigFile.IDS).getInt("ids." + id + ".generation.schematicchance");
+        //return SpaceConfig.getConfig(ConfigFile.IDS).getInt("ids." + id + ".generation.schematicchance", (Integer) SCHEMATIC_CHANCE.getDefault());
     }
-
-    /**
-     * Gets the generate black holes with spout value.
-     *
-     * @param id ID
-     *
-     * @return True if generating black holes with spout
-     */
-    public static boolean getGenerateBlackHolesSpout(String id) {
-        if (id.equalsIgnoreCase("planets")  ) {
-            return (Boolean) SPOUT_BLACKHOLES.getDefault();
-        }
-        return SpaceConfig.getConfig(ConfigFile.IDS).getBoolean("ids." + id + ".generation.spoutblackholes", (Boolean) SPOUT_BLACKHOLES.getDefault());
-    }
+    
 
      /**
      * Gets the generate black holes without spout value.
@@ -346,9 +367,11 @@ public class SpaceConfigHandler {
      */
     public static boolean getGenerateBlackHolesNonSpout(String id) {
         if (id.equalsIgnoreCase("planets")  ) {
-            return (Boolean) NONSPOUT_BLACKHOLES.getDefault();
+            return SpaceConfig.getConfig(ConfigFile.IDS).getBoolean("ids." + id + ".generation.nonspoutblackholes");
+            //return (Boolean) NONSPOUT_BLACKHOLES.getDefault();
         }
-        return SpaceConfig.getConfig(ConfigFile.IDS).getBoolean("ids." + id + ".generation.nonspoutblackholes", (Boolean) SPOUT_BLACKHOLES.getDefault());
+        return SpaceConfig.getConfig(ConfigFile.IDS).getBoolean("ids." + id + ".generation.nonspoutblackholes");
+        //return SpaceConfig.getConfig(ConfigFile.IDS).getBoolean("ids." + id + ".generation.nonspoutblackholes", (Boolean) SPOUT_BLACKHOLES.getDefault());
     }
 
     /**
@@ -360,9 +383,11 @@ public class SpaceConfigHandler {
      */
     public static int getBlackHoleChance(String id) {
         if (id.equalsIgnoreCase("planets")) {
-            return (Integer) BLACKHOLE_CHANCE.getDefault();
+            return SpaceConfig.getConfig(ConfigFile.IDS).getInt("ids." + id + ".generation.blackholechance");
+            //return (Integer) BLACKHOLE_CHANCE.getDefault();
         }
-        return SpaceConfig.getConfig(ConfigFile.IDS).getInt("ids." + id + ".generation.blackholechance", (Integer) BLACKHOLE_CHANCE.getDefault());
+        return SpaceConfig.getConfig(ConfigFile.IDS).getInt("ids." + id + ".generation.blackholechance");
+        //return SpaceConfig.getConfig(ConfigFile.IDS).getInt("ids." + id + ".generation.blackholechance", (Integer) BLACKHOLE_CHANCE.getDefault());
     }
 
     /**
