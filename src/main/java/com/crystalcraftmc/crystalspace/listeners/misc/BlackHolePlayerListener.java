@@ -3,7 +3,6 @@ package com.crystalcraftmc.crystalspace.listeners.misc;
 
 // Java Imports
 
-import com.crystalcraftmc.crystalspace.handlers.ConfigHandler;
 import com.crystalcraftmc.crystalspace.handlers.WorldHandler;
 import com.crystalcraftmc.crystalspace.wgen.populators.SpaceBlackHolePopulator;
 import org.bukkit.Bukkit;
@@ -57,9 +56,6 @@ public class BlackHolePlayerListener implements Listener {
             return;
         }
 	String id = WorldHandler.getID(event.getPlayer().getWorld());
-	if(!ConfigHandler.getGenerateBlackHolesNonSpout(id) || ConfigHandler.getGenerateBlackHolesSpout(id)){
-	    return;
-	}
 	if(Action.LEFT_CLICK_BLOCK != event.getAction() || event.getClickedBlock().getTypeId() != SpaceBlackHolePopulator.ID_TO_USE){
 	    return;
 	}
