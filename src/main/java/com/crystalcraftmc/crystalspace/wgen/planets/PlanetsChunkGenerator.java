@@ -296,10 +296,10 @@ public class PlanetsChunkGenerator extends ChunkGenerator {
             populators.add(new SpaceSchematicPopulator());
         }
         if (ConfigHandler.getGenerateBlackHolesSpout(ID) && ConfigHandler.isUsingSpout() && Bukkit.getPluginManager().isPluginEnabled("Spout")) {
-            populators.add(new SpaceBlackHolePopulator(true));
+            populators.add(new SpaceBlackHolePopulator());
         }
         else if (ConfigHandler.getGenerateBlackHolesNonSpout(ID)){
-            populators.add(new SpaceBlackHolePopulator(false));
+            populators.add(new SpaceBlackHolePopulator());
         }
         populators.add(new SpaceDataPopulator());
         // Not FPS friendly
