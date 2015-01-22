@@ -1,15 +1,18 @@
-# bSpace - plugin.yml
+# CrystalSpace - plugin.yml
 # All developers/contributors are here!
-authors: [kitskub, iffa, SwearWord, HACKhalo2, Canis85, BR]
-main: me.iffa.bspace.Space
-name: bSpace
-url: http://github.com/iffa/bSpace
-dev-url: http://dev.bukkit.org/server-mods/bSpace
-jenkins-url: http://ci.chrisgward.com/jobs/bSpace
+
+authors: [kitskub, iffa, SwearWord, HACKhalo2, Canis85, BR, jflory7, Jacc734, Jwood9198]
+main: com.crystalcraftmc.crystalspace.Space
+name: CrystalSpace
+url: https://github.com/CrystalCraftMC/CrystalSpace
+#TODO dev-url: http://dev.bukkit.org/server-mods/bSpace
+#TODO jenkins-url: http://ci.chrisgward.com/jobs/bSpace
+
 # Load on startup for bukkit.yml, and all that support
 load: startup
-version: 'v2.5-dev'
-softdepend: [Spout, Register]
+version: 'v3.0.0-ALPHA1'
+softdepend: [Register]
+
 # Commands
 commands:
   space:
@@ -20,27 +23,31 @@ commands:
           /<command> <list> - Lists all spaceworlds (loaded with config.yml)
           /<command> <help> - Shows help (usage)
           /<command> <about> - About bSpace
+
 # Permission nodes
 permissions:
-  # Permission groups
-      # All command permissions group
+  
+  # All command permissions group
   bSpace.commands.*:
     description: Access to all bSpace commands.
     children:
       bSpace.teleport.*: true
-      # Ignores
+  
+  # Ignores
   bSpace.ignore.*:
     description: Access to all ignore permissions (no suit check, black hole effects etc.).
     children:
       bSpace.ignoresuitchecks: true
       bSpace.ignoreblackholes: true
-      # Teleport
+  
+  # Teleport
   bSpace.teleport.*:
     description: Access to all teleportation commands.
     children:
       bSpace.teleport.enter: true
       bSpace.teleport.exit: true
       bSpace.teleport.list: true
+  
   # Single permissions
   bSpace.teleport.enter:
     description: Allows teleporting to space.
