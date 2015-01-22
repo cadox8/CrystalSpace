@@ -5,7 +5,7 @@
     <groupId>com.crystalcraftmc.crystalspace</groupId>
     <artifactId>CrystalSpace</artifactId>
     <version>3.0.0-ALPHA1</version>
-    <name>bSpace</name>
+    <name>CrystalSpace</name>
     <url>https://github.com/CrystalCraftMC/CrystalSpace</url>
 
     <profiles>
