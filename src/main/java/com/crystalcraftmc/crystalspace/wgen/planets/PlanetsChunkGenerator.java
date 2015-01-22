@@ -295,13 +295,11 @@ public class PlanetsChunkGenerator extends ChunkGenerator {
         if (ConfigHandler.getGenerateSchematics(ID)) {
             populators.add(new SpaceSchematicPopulator());
         }
-        if (ConfigHandler.getGenerateBlackHolesSpout(ID) && ConfigHandler.isUsingSpout() && Bukkit.getPluginManager().isPluginEnabled("Spout")) {
-            populators.add(new SpaceBlackHolePopulator());
-        }
         else if (ConfigHandler.getGenerateBlackHolesNonSpout(ID)){
             populators.add(new SpaceBlackHolePopulator());
         }
         populators.add(new SpaceDataPopulator());
+        
         // Not FPS friendly
         if (false) {
             populators.add(new SpaceEffectPopulator());
@@ -397,9 +395,9 @@ public class PlanetsChunkGenerator extends ChunkGenerator {
     /**
      * Returns a valid block type.
      * 
-     * @param randrandom generator to use
+     * //@param randrandom generator to use
      * @param core if true, searching through allowed cores, otherwise allowed shells
-     * @param heated if true, will not return a block that gives off heat
+     * //@param heated if true, will not return a block that gives off heat
      * 
      * @return Material
      */
