@@ -4,32 +4,24 @@ package com.crystalcraftmc.crystalspace.wgen.populators;
 // Java Imports
 
 import com.crystalcraftmc.crystalspace.handlers.ConfigHandler;
-import com.crystalcraftmc.crystalspace.handlers.SpoutHandler;
 import org.bukkit.Chunk;
 import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.generator.BlockPopulator;
-import org.getspout.spoutapi.SpoutManager;
-import org.getspout.spoutapi.block.SpoutBlock;
 
 import java.util.Random;
-
-// bSpace Imports
-// Bukkit Imports
-// Spout Imports
 
 /**
  * Populates a world with black holes.
  *
  * @author kitskub
  * @author iffa
+ * @author jflory7 
  */
 public class SpaceBlackHolePopulator extends BlockPopulator {
     public static final int ID_TO_USE = 120; //for easier changing if needed
-    private static boolean useSpout;
 
-    public SpaceBlackHolePopulator(boolean spout) {
-        useSpout = spout;
+    public SpaceBlackHolePopulator() {
     }
 
 
@@ -43,23 +35,19 @@ public class SpaceBlackHolePopulator extends BlockPopulator {
     @Override
     public void populate(World world, Random random, Chunk source) {
         String id = ConfigHandler.getID(world);
+        
         if (withinSpawn(source)) {
             return;
         }
+        
         if (random.nextInt(100) <= ConfigHandler.getBlackHoleChance(id)) {
             int chunkX = source.getX();
             int chunkZ = source.getZ();
             int x = random.nextInt(16);
             int z = random.nextInt(16);
             int y = random.nextInt(world.getMaxHeight());
-            if(useSpout){
-                SpoutBlock sb = (SpoutBlock) world.getBlockAt((chunkX * 16 + x), y, (chunkZ * 16 + z));
-                SpoutManager.getMaterialManager().overrideBlock(sb, SpoutHandler.blackHole);
-            }
-            else {
-                Block block = world.getBlockAt((chunkX * 16 + x), y, (chunkZ * 16 + z));
-                block.setTypeId(ID_TO_USE);
-            }
+            Block block = world.getBlockAt((chunkX * 16 + x), y, (chunkZ * 16 + z));
+            block.setTypeId(ID_TO_USE);
         }
     }
 
@@ -74,9 +62,6 @@ public class SpaceBlackHolePopulator extends BlockPopulator {
         int x = source.getX();
         int z = source.getZ();
 
-        if (x > -2 && x < 2 && z > -2 && z < 2) {
-            return true;
-        }
-        return false;
+        return x > -2 && x < 2 && z > -2 && z < 2;
     }
 }
