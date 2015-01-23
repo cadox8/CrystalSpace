@@ -10,7 +10,7 @@ url: https://github.com/CrystalCraftMC/CrystalSpace
 
 # Load on startup for bukkit.yml, and all that support
 load: startup
-version: 'v3.0.0-ALPHA1'
+version: 3.0.0-ALPHA2
 softdepend: [Register]
 
 # Commands

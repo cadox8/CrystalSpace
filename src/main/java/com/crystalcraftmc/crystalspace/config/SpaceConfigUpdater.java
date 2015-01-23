@@ -147,8 +147,8 @@ public class SpaceConfigUpdater {
             MessageHandler.print(Level.INFO, LangHandler.getConfigUpdateFinishMessage());
         }
 
-        File oldPlanets = new File(Bukkit.getPluginManager().getPlugin("bSpace").getDataFolder(), "planets.yml");
-        File newPlanets = new File(Bukkit.getPluginManager().getPlugin("bSpace").getDataFolder(), "planets/planets.yml");
+        File oldPlanets = new File(Bukkit.getPluginManager().getPlugin("CrystalSpace").getDataFolder(), "planets.yml");
+        File newPlanets = new File(Bukkit.getPluginManager().getPlugin("CrystalSpace").getDataFolder(), "planets/planets.yml");
         if(oldPlanets.exists()){
             if(newPlanets.exists()){
                 newPlanets.delete();

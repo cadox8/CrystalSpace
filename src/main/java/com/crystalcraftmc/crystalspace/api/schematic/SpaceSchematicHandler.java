@@ -89,7 +89,7 @@ public class SpaceSchematicHandler {
      * Loads all schematics from plugins/bSpace/schematics.
      */
     public static void loadSchematics() {
-        List<File> files = Arrays.asList(new File("plugins" + File.separator + "bSpace" + File.separator + "schematics").listFiles());
+        List<File> files = Arrays.asList(new File("plugins" + File.separator + "CrystalSpace" + File.separator + "schematics").listFiles());
         if (files.isEmpty()) {
             return;
         }
@@ -133,8 +133,7 @@ public class SpaceSchematicHandler {
 
             // Need to pull out tile entities
             List<Tag> tileEntities = getChildTag(tagCollection, "TileEntities", ListTag.class).getValue();
-            Schematic schem = new Schematic(name, blocks, data, width, height, length, entities, tileEntities);
-            return schem;
+            return new Schematic(name, blocks, data, width, height, length, entities, tileEntities);
     }
 
     /**

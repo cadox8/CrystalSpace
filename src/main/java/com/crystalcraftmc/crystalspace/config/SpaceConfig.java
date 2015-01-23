@@ -85,7 +85,7 @@ public class SpaceConfig {
      * @param configFile ConfigFile to load
      */
     public static void loadConfig(ConfigFile configFile) {
-        fileMap.put(configFile, new File(Bukkit.getServer().getPluginManager().getPlugin("bSpace").getDataFolder(), configFile.getNameWithLocation()));
+        fileMap.put(configFile, new File(Bukkit.getServer().getPluginManager().getPlugin("CrystalSpace").getDataFolder(), configFile.getNameWithLocation()));
         if (fileMap.get(configFile).exists()) {
             config.put(configFile, new YamlConfiguration());
             try {
@@ -106,7 +106,7 @@ public class SpaceConfig {
             loaded.put(configFile, true);
         } else {
             try {
-                Bukkit.getServer().getPluginManager().getPlugin("bSpace").getDataFolder().mkdir();
+                Bukkit.getServer().getPluginManager().getPlugin("CrystalSpace").getDataFolder().mkdir();
                 fileMap.get(configFile).getParentFile().mkdir();
                 if(!fileMap.get(configFile).exists()) fileMap.get(configFile).createNewFile();
                 InputStream jarURL = SpaceConfig.class.getResourceAsStream("/" + configFile.getName());
@@ -244,7 +244,7 @@ public class SpaceConfig {
         GENERATE_SCHEMATICS(true),
         BLACKHOLE_CHANCE(8),
         SPOUT_BLACKHOLES(true),
-	NONSPOUT_BLACKHOLES(true),
+	    NONSPOUT_BLACKHOLES(true),
         SCHEMATIC_CHANCE(5),
         // ConfigFile.DEFAULT_PLANETS
         DENSITY(15000),
