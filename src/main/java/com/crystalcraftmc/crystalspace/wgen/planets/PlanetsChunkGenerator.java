@@ -1,8 +1,6 @@
 // Package Declaration
 package com.crystalcraftmc.crystalspace.wgen.planets;
 
-// Java Imports
-
 import com.crystalcraftmc.crystalspace.config.SpaceConfig;
 import com.crystalcraftmc.crystalspace.handlers.ConfigHandler;
 import com.crystalcraftmc.crystalspace.handlers.MessageHandler;
@@ -20,16 +18,12 @@ import java.io.File;
 import java.util.*;
 import java.util.logging.Level;
 
-// bSpace Imports
-// Bukkit Imports
-
 /**
  * Generates a space world with planets.
  * 
  * @author Jack
  * @author Canis85
  * @author iffa
- * @author SpoutDev //for world gen. utils
  */
 public class PlanetsChunkGenerator extends ChunkGenerator {
     // Variables
@@ -80,7 +74,7 @@ public class PlanetsChunkGenerator extends ChunkGenerator {
      * @return Byte array
      */
     @Override
-    public byte[][] generateBlockSections(World world, java.util.Random random, int x, int z, ChunkGenerator.BiomeGrid biomes){
+    public byte[][] generateBlockSections(World world, Random random, int x, int z, BiomeGrid biomes){
         // TODO: Use maxWorldHeight here
         if (!planets.containsKey(world)) {
             planets.put(world, new ArrayList<Planetoid>());
@@ -125,6 +119,9 @@ public class PlanetsChunkGenerator extends ChunkGenerator {
                                     }
                                     if (xShell || zShell || yShell) {
                                         ArrayList<MaterialData> list = new ArrayList<MaterialData>(curPl.shellBlkIds);
+                                        //TODO Test-fix the NPE by adding something to the ArrayList... what is MaterialData?!
+                                        // https://hub.spigotmc.org/javadocs/spigot/org/bukkit/material/MaterialData.html
+                                        // list.add(0, ???);
                                         MaterialData get = list.get(random.nextInt(list.size()));
                                         setBlock(retVal, chunkX, worldY, chunkZ, (byte) get.getItemTypeId());
                                         if (get.getData() != 0) { //Has data
@@ -132,6 +129,9 @@ public class PlanetsChunkGenerator extends ChunkGenerator {
                                         }
                                     } else {
                                         ArrayList<MaterialData> list = new ArrayList<MaterialData>(curPl.coreBlkIds);
+                                        //TODO Test-fix the NPE by adding something to the ArrayList... what is MaterialData?!
+                                        // https://hub.spigotmc.org/javadocs/spigot/org/bukkit/material/MaterialData.html
+                                        // list.add(0, ???);
                                         // this confuses me too much. this part is setting core blocks, right? how is it "random"?
                                         MaterialData get = list.get(random.nextInt(list.size()));
                                         setBlock(retVal, chunkX, worldY, chunkZ, (byte) get.getItemTypeId());
@@ -478,7 +478,7 @@ public class PlanetsChunkGenerator extends ChunkGenerator {
         if(ID.equals("planets")) return;
         try {
             YamlConfiguration config = new YamlConfiguration();
-            config.load(new File(Bukkit.getPluginManager().getPlugin("bSpace").getDataFolder(), "planets/" + ConfigHandler.getPlanetsFile(ID)));
+            config.load(new File(Bukkit.getPluginManager().getPlugin("CrystalSpace").getDataFolder(), "planets/" + ConfigHandler.getPlanetsFile(ID)));
             density = config.getInt("density", (Integer) SpaceConfig.Defaults.DENSITY.getDefault()); // Number of planetoids it will try to create per
             minSize = config.getInt("minSize", (Integer) SpaceConfig.Defaults.MIN_SIZE.getDefault()); // Minimum radius
             maxSize = config.getInt("maxSize", (Integer) SpaceConfig.Defaults.MAX_SIZE.getDefault()); // Maximum radius

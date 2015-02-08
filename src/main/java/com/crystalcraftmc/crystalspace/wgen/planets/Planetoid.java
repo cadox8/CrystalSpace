@@ -1,14 +1,10 @@
 // Package Declaration
 package com.crystalcraftmc.crystalspace.wgen.planets;
 
-// Java Imports
-
 import org.bukkit.material.MaterialData;
 
 import java.io.Serializable;
 import java.util.Set;
-
-// Bukkit Imports
 
 /**
  * Holder class for an individual planetoid.
