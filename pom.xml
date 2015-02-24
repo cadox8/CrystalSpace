@@ -1,8 +1,7 @@
 <!-- bSpace pom.xml -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-<<<<<<< HEAD
-    
+
     <groupId>com.crystalcraftmc.crystalspace</groupId>
     <artifactId>CrystalSpace</artifactId>
     <version>3.0.0-ALPHA4</version>
@@ -43,14 +42,7 @@
             </build>
         </profile>
     </profiles>
-    
-=======
-    <groupId>me.iffa.bspace</groupId>
-    <artifactId>CrystalSpace</artifactId>
-    <version>v2.5-dev</version>
-    <name>bSpace</name>
-    <url>http://github.com/iffa/bSpace</url>
->>>>>>> master
+
     <!-- Repositories -->
     <repositories>
         <repository>
@@ -88,4 +80,5 @@
             <systemPath>${project.basedir}/libs/Register.jar</systemPath>
         </dependency>
     </dependencies>
+
 </project>
