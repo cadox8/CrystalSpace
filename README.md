@@ -5,9 +5,6 @@ Welcome to the [CrystalCraftMC](http://crystalcraftmc.com) fork of bSpace. We ha
 
 As more information is made available, this README file will be updated to include more information. Below are important URLs or general information about the project.
 
-## Branches
-The project branches are going to be managed in two branches. All of our experimental development work will be completed in the `experimental` branch and will be subjected to rigorous testing. Whenever our testing yields significant results, we will merge our changes into the `master` branch as either an alpha, beta, or full release. This will be signified with a corresponding tag.
-
 ## Information
 The CrystalCraftMC Development Team consists of three people: jflory7, Jacc734, Jwood9198.
 
