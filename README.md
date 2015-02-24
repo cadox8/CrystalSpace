@@ -1,7 +1,20 @@
-## [bSpace on BukkitDev](http://dev.bukkit.org/server-mods/bSpace/pages/)
-## [bSpace Jenkins (builds automatically after a commit!)](http://ci.chrisgward.com/job/bSpace/)
+# bSpace v3.0-DEVEL
+### An unofficial effort by the [CrystalCraftMC Development Team](http://crystalcraftmc.com) to revive the functionality of a useful plugin
 
-NOTE: We'll still keep the target/-directory. Why? You never know when Jenkins takes a nap.
+Welcome to the [CrystalCraftMC](http://crystalcraftmc.com) fork of bSpace. We have decided to make this one of our long-term projects for the team to not only help us learn, but also to benefit our own server and help us recreate one of the most amazing gametypes to be known in the world of Minecraft.
+
+As more information is made available, this README file will be updated to include more information. Below are important URLs or general information about the project.
+
+## Branches
+The project branches are going to be managed in two branches. All of our experimental development work will be completed in the `experimental` branch and will be subjected to rigorous testing. Whenever our testing yields significant results, we will merge our changes into the `master` branch as either an alpha, beta, or full release. This will be signified with a corresponding tag.
+
+## Information
+The CrystalCraftMC Development Team consists of three people: jflory7, Jacc734, Jwood9198.
+
+CrystalCraftMC Build Server (Coming Soon)
+[Original bSpace on BukkitDev](http://dev.bukkit.org/server-mods/bSpace/pages/)
+
+## Conventions From Original README
 
 Coding and Pull Request Conventions
 -----------

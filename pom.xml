@@ -1,53 +1,83 @@
 <!-- bSpace pom.xml -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+<<<<<<< HEAD
+    
+    <groupId>com.crystalcraftmc.crystalspace</groupId>
+    <artifactId>CrystalSpace</artifactId>
+    <version>3.0.0-ALPHA4</version>
+    <name>CrystalSpace</name>
+    <url>https://github.com/CrystalCraftMC/CrystalSpace</url>
+
+    <profiles>
+        <profile>
+            <id>com.crystalcraftmc.crystalspace</id>
+            <build>
+                <finalName>CrystalSpace</finalName>
+                <directory>src/main/java/</directory>
+                <resources>
+                    <resource>
+                        <targetPath>.</targetPath>
+                        <filtering>true</filtering>
+                        <directory>${basedir}/src/main/resources/</directory>
+                        <includes>
+                            <include>plugin.yml</include>
+                            <include>config.yml</include>
+                            <include>ids.yml</include>
+                            <include>lang.yml</include>
+                            <include>planets.yml</include>
+                            <include>bspace.png</include>
+                        </includes>
+                    </resource>
+                </resources>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-compiler-plugin</artifactId>
+                        <configuration>
+                            <source>1.7</source>
+                            <target>1.7</target>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+    
+=======
     <groupId>me.iffa.bspace</groupId>
     <artifactId>CrystalSpace</artifactId>
     <version>v2.5-dev</version>
     <name>bSpace</name>
     <url>http://github.com/iffa/bSpace</url>
+>>>>>>> master
     <!-- Repositories -->
     <repositories>
         <repository>
-            <id>bukkit-repo</id>
-            <url>http://repo.bukkit.org/content/groups/public/</url>
-        </repository>
-        <repository>
-            <id>spout</id>
-            <name>spout</name>
-            <url>http://nexus.spout.org/content/groups/public/</url>
+            <id>spigot-repo</id>
+            <url>https://hub.spigotmc.org/nexus/content/groups/public/</url>
         </repository>
     </repositories>
+    
+    <!-- Continious Integration - will make a return later
     <ciManagement>
         <system>jenkins</system>
         <url>http://ci.chrisgward.com</url>
-    </ciManagement>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.0.2</version>
-                <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+    </ciManagement> -->
+    
     <!-- Dependencies -->
     <dependencies>
         <dependency>
-            <groupId>org.getspout</groupId>
-            <artifactId>spoutplugin</artifactId>
-            <version>1.4.6-R0.2-SNAPSHOT</version>
-            <scope>compile</scope>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot-api</artifactId>
+            <version>1.8-R0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.bukkit</groupId>
             <artifactId>bukkit</artifactId>
-            <version>1.5.1-R0.1-SNAPSHOT</version>
+            <version>1.8-R0.1-SNAPSHOT</version>
             <type>jar</type>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.nijikokun</groupId>
