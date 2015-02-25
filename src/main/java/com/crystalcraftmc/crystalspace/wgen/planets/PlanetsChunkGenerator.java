@@ -230,15 +230,21 @@ public class PlanetsChunkGenerator extends ChunkGenerator {
                 }
                 switch (d.getItemType()) {
                     case LEAVES:
-                        curPl.coreBlkIds = new HashSet<MaterialData>(Collections.singleton(new MaterialData(Material.LOG, (byte) 0)));//If there's any leaves, only use wood
+                        curPl.coreBlkIds = new HashSet<MaterialData>(Collections.singleton(new MaterialData(Material.LOG)));//If there's any leaves, only use wood
                         break outer;
                     case ICE:
+                        curPl.coreBlkIds = new HashSet<MaterialData>(Collections.singleton(new MaterialData(Material.WATER)));// If there's ice, use water? Not final
+                        break outer;
                     case WOOL:
                         noHeat = true;
-                        break outer;//We know that it can't be heated
-                    default://Nothing special aka we don't care
+                        break outer;
+                    default:
                 }
             }
+            
+            // Lol, we weren't even TRYING to give the Planetoid core blocks => NPE
+            // I wonder when this was broken like this
+            curPl.coreBlkIds = getBlockTypes(rand, true, noHeat);
 
             curPl.shellThickness = rand.nextInt(maxShellSize - minShellSize) + minShellSize;
             curPl.radius = rand.nextInt(maxSize - minSize) + minSize;
