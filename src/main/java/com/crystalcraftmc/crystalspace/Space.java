@@ -200,7 +200,7 @@ public class Space extends JavaPlugin {
     /**
      * Gets the location cache.
      *
-     * @return Location cach
+     * @return Location cache
      */
     public static Map<Player, Location> getLocCache() {
         return locCache;

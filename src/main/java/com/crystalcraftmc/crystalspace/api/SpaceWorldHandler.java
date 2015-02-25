@@ -1,8 +1,6 @@
 // Package Declaration
 package com.crystalcraftmc.crystalspace.api;
 
-// Java Imports
-
 import com.crystalcraftmc.crystalspace.Space;
 import com.crystalcraftmc.crystalspace.handlers.ConfigHandler;
 import com.crystalcraftmc.crystalspace.handlers.MessageHandler;
@@ -19,9 +17,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
 
-// bSpace Imports
-// Bukkit Imports
-
 /**
  * Class that handles space worlds.
  * External use only.
@@ -32,7 +27,7 @@ import java.util.logging.Level;
 public class SpaceWorldHandler {
     // Variables
     protected static List<String> spaceWorldNames = new ArrayList<String>();
-    private static Space plugin = (Space) Bukkit.getPluginManager().getPlugin("bSpace");
+    private static Space plugin = (Space) Bukkit.getPluginManager().getPlugin("CrystalSpace");
     private static Map<World, Integer> forcenightId = new HashMap<World, Integer>();
 
     /**

@@ -429,7 +429,6 @@ public class PlanetsChunkGenerator extends ChunkGenerator {
                                 retVal = null;//Try again
                                 continue outer;
                             default:
-                                continue;//It's fine
                         }
                     }
                 }

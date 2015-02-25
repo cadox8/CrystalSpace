@@ -1,4 +1,4 @@
-# bSpace v3.0-DEVEL
+# CrystalSpace v3.0-DEVEL
 ### An unofficial effort by the [CrystalCraftMC Development Team](http://crystalcraftmc.com) to revive the functionality of a useful plugin
 
 Welcome to the [CrystalCraftMC](http://crystalcraftmc.com) fork of bSpace. We have decided to make this one of our long-term projects for the team to not only help us learn, but also to benefit our own server and help us recreate one of the most amazing gametypes to be known in the world of Minecraft.

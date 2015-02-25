@@ -144,8 +144,8 @@ public class SpaceSchematicHandler {
     @SuppressWarnings("unchecked")
     public static void loadSchematic(File file) {
         try{
-			FileInputStream fis = new FileInputStream(file);
-			NBTInputStream nbt = new NBTInputStream(fis);
+            FileInputStream fis = new FileInputStream(file);
+            NBTInputStream nbt = new NBTInputStream(fis);
             Schematic schematic = loadSchematic(file.getName().replaceAll(".schematic", ""), nbt);
             if (nbt != null) {
                 nbt.close();
