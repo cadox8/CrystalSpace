@@ -1,8 +1,6 @@
 // Package Declaration
 package com.crystalcraftmc.crystalspace.api;
 
-// CrystalSpace Imports
-
 import com.crystalcraftmc.crystalspace.config.SpaceConfig;
 import com.crystalcraftmc.crystalspace.config.SpaceConfig.ConfigFile;
 import com.crystalcraftmc.crystalspace.handlers.MessageHandler;
@@ -14,9 +12,6 @@ import org.bukkit.World;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
-
-// Bukkit Imports
-// Java Imports
 
 /**
  * Static methods handle configuration.

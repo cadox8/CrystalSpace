@@ -197,8 +197,8 @@ public class PlanetsChunkGenerator extends ChunkGenerator {
             spawnPl.xPos = 7;
             spawnPl.yPos = 70;
             spawnPl.zPos = 7;
-            spawnPl.coreBlkIds = new HashSet<MaterialData>(Collections.singleton(new MaterialData(Material.LOG, (byte) 0)));
-            spawnPl.shellBlkIds = new HashSet<MaterialData>(Collections.singleton(new MaterialData(Material.LEAVES, (byte) 0)));
+            spawnPl.coreBlkIds = new HashSet<MaterialData>(Collections.singleton(new MaterialData(Material.LOG)));
+            spawnPl.shellBlkIds = new HashSet<MaterialData>(Collections.singleton(new MaterialData(Material.LEAVES)));
             spawnPl.shellThickness = 3;
             spawnPl.radius = 6;
             planets.get(world).add(spawnPl);
@@ -325,6 +325,7 @@ public class PlanetsChunkGenerator extends ChunkGenerator {
                 value = 1.0f;
             }
             allowedCoreIds.put(matDatas, value);
+            MessageHandler.debugPrint(Level.INFO, "allowedCoreIds has " + allowedCoreIds.size() + " entries");
         }
 
         for (String s : SpaceConfig.getConfig(SpaceConfig.ConfigFile.DEFAULT_PLANETS).getStringList("blocks.shells")) {
@@ -338,6 +339,7 @@ public class PlanetsChunkGenerator extends ChunkGenerator {
                 value = 1.0f;
             }
             allowedShellIds.put(matDatas, value);
+            MessageHandler.debugPrint(Level.INFO, "allowedShellIds has " + allowedShellIds.size() + " entries");
         }
     }
 
@@ -357,6 +359,7 @@ public class PlanetsChunkGenerator extends ChunkGenerator {
             else{
                 name = mat;
             }
+            MessageHandler.print(Level.INFO, "Trying to match material with name: " + name);
             Material newMat = Material.matchMaterial(name);
 
             if(newMat != null){//Vanilla material
