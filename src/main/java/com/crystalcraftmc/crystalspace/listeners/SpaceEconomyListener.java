@@ -1,7 +1,7 @@
 // Package Declaration
 package com.crystalcraftmc.crystalspace.listeners;
 
-// bSpace Imports
+// CrystalSpace Imports
 
 import com.crystalcraftmc.crystalspace.api.event.area.SpaceEnterEvent;
 import com.crystalcraftmc.crystalspace.api.event.area.SpaceLeaveEvent;

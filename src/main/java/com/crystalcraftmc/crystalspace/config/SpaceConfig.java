@@ -15,7 +15,7 @@ import java.util.EnumMap;
 import java.util.Map;
 import java.util.logging.Level;
 
-// bSpace Imports
+// CrystalSpace Imports
 // Bukkit Imports
 
 /**

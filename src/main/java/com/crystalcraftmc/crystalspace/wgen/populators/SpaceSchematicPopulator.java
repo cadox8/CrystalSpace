@@ -15,13 +15,13 @@ import org.bukkit.generator.BlockPopulator;
 import java.util.Random;
 import java.util.logging.Level;
 
-// bSpace Imports
+// CrystalSpace Imports
 // Bukkit Imports
 
 /**
  * Populates a world with schematics.
  * 
- * @author iffamies
+ * @author iffa
  */
 public class SpaceSchematicPopulator extends BlockPopulator {
 

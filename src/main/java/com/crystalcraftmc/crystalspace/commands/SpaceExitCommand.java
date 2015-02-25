@@ -30,7 +30,7 @@ public class SpaceExitCommand extends SpaceCommand {
     /**
      * Constructor of SpaceExitCommand.
      * 
-     * @param plugin bSpace instance
+     * @param plugin CrystalSpace instance
      * @param sender Command sender
      * @param args Command arguments
      */
@@ -45,7 +45,7 @@ public class SpaceExitCommand extends SpaceCommand {
     public void command() {
         Player player = (Player) getSender();
         if (WorldHandler.isInAnySpace(player)) {
-            if (PlayerHandler.hasPermission("bSpace.teleport.exit", player)) {
+            if (PlayerHandler.hasPermission("CrystalSpace.teleport.exit", player)) {
                 if (!Economy.exitCommand(player)) {
                     MessageHandler.sendNotEnoughMoneyMessage(player);
                     return;

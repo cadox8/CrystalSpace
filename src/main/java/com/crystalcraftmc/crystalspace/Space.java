@@ -28,7 +28,7 @@ import java.util.Map;
 import java.util.logging.Level;
 
 /**
- * Main class of bSpace.
+ * Main class of CrystalSpace.
  *
  * @author iffa
  * @author kitskub

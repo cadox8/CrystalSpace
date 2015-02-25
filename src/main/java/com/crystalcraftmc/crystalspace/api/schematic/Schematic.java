@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * Represents a schematic.
  * 
- * @author iffamies
+ * @author iffa
  */
 public class Schematic {
     // Variables

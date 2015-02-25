@@ -1,7 +1,7 @@
 // Package Declaration
 package com.crystalcraftmc.crystalspace.commands;
 
-// bSpace Imports
+// CrystalSpace Imports
 
 import com.crystalcraftmc.crystalspace.Space;
 import com.crystalcraftmc.crystalspace.handlers.WorldHandler;
@@ -13,13 +13,13 @@ import org.bukkit.command.CommandSender;
 /**
  * Represents "/space about".
  * 
- * @author iffamies
+ * @author iffa
  */
 public class SpaceAboutCommand extends SpaceCommand {
     /**
      * Constructor of SpaceAboutCommand.
      * 
-     * @param plugin bSpace instance
+     * @param plugin CrystalSpace instance
      * @param sender Command sender
      * @param args Command arguments
      */

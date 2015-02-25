@@ -1,7 +1,7 @@
 // Package Declaration
 package com.crystalcraftmc.crystalspace.api;
 
-// bSpace Imports
+// CrystalSpace Imports
 
 import com.crystalcraftmc.crystalspace.config.SpaceConfig;
 import com.crystalcraftmc.crystalspace.config.SpaceConfig.ConfigFile;

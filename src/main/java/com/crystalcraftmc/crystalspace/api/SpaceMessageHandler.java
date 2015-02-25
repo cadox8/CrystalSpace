@@ -9,7 +9,7 @@ import org.bukkit.Bukkit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-// bSpace Imports
+// CrystalSpace Imports
 // Bukkit Imports
 
 /**

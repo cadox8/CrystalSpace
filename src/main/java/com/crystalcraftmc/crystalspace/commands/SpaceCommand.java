@@ -1,7 +1,7 @@
 // Package Declaration
 package com.crystalcraftmc.crystalspace.commands;
 
-// bSpace Imports
+// CrystalSpace Imports
 
 import com.crystalcraftmc.crystalspace.Space;
 import org.bukkit.command.CommandSender;
@@ -22,7 +22,7 @@ public abstract class SpaceCommand {
     /**
      * Constructor of SpaceCommand.
      * 
-     * @param plugin bSpace instance
+     * @param plugin CrystalSpace instance
      * @param sender Command sender
      * @param args Command arguments
      */

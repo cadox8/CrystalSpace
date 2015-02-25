@@ -26,7 +26,7 @@ import java.util.Map;
 /**
  * Player listener to trigger black hole sucking.
  *
- * @author iffamies
+ * @author iffa
  * @author jflory7
  */
 public class BlackHolePlayerListener implements Listener {
@@ -44,7 +44,7 @@ public class BlackHolePlayerListener implements Listener {
      */
     @EventHandler(priority = EventPriority.MONITOR)
     public void onPlayerMove(PlayerMoveEvent event) {
-        if (event.isCancelled() || !WorldHandler.isInAnySpace(event.getPlayer()) || event.getPlayer().getHealth() == 0 || event.getPlayer().hasPermission("bSpace.ignoreblackholes")) return;
+        if (event.isCancelled() || !WorldHandler.isInAnySpace(event.getPlayer()) || event.getPlayer().getHealth() == 0 || event.getPlayer().hasPermission("CrystalSpace.ignoreblackholes")) return;
         long currentTime = System.currentTimeMillis();
         if (!(lastTime + 200 <= currentTime)) return;
         lastTime = System.currentTimeMillis();
@@ -52,7 +52,7 @@ public class BlackHolePlayerListener implements Listener {
     
     @EventHandler(priority = EventPriority.MONITOR)
     public void onPlayerInteract(PlayerInteractEvent event){// Check if breaking non-spout black hole
-	if (event.isCancelled() || !WorldHandler.isInAnySpace(event.getPlayer()) || event.getPlayer().getHealth() == 0 || !event.getPlayer().hasPermission("bSpace.ignoreblackholes")) {
+	if (event.isCancelled() || !WorldHandler.isInAnySpace(event.getPlayer()) || event.getPlayer().getHealth() == 0 || !event.getPlayer().hasPermission("CrystalSpace.ignoreblackholes")) {
             return;
         }
 	String id = WorldHandler.getID(event.getPlayer().getWorld());
