@@ -1,8 +1,6 @@
 // Package Declaration
 package com.crystalcraftmc.crystalspace.api;
 
-// Java Imports
-
 import com.crystalcraftmc.crystalspace.handlers.ConfigHandler;
 import com.crystalcraftmc.crystalspace.handlers.MessageHandler;
 import org.bukkit.ChatColor;
@@ -14,8 +12,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
 import java.util.logging.Level;
-
-// Bukkit Imports
 
 /**
  * Player related methods.

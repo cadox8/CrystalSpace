@@ -1,8 +1,6 @@
 // Package Declaration
 package com.crystalcraftmc.crystalspace.wgen.populators;
 
-// Java Imports
-
 import com.crystalcraftmc.crystalspace.handlers.ConfigHandler;
 import org.bukkit.Chunk;
 import org.bukkit.World;
@@ -11,9 +9,6 @@ import org.bukkit.block.BlockFace;
 import org.bukkit.generator.BlockPopulator;
 
 import java.util.Random;
-
-// CrystalSpace Imports
-// Bukkit Imports
 
 /**
  * SpaceAsteroidPopulator, populates a world with Notch's original stone (glowstone) patches.

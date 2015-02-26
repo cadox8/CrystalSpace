@@ -1,13 +1,8 @@
 // Package Declaration
 package com.crystalcraftmc.crystalspace.api.schematic;
 
-// Java Imports
-
 import org.jnbt.Tag;
-
 import java.util.List;
-
-// JNBT Imports
 
 /**
  * Represents a schematic.

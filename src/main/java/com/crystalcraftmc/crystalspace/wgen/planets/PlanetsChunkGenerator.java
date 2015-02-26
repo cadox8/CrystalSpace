@@ -75,7 +75,6 @@ public class PlanetsChunkGenerator extends ChunkGenerator {
      */
     @Override
     public byte[][] generateBlockSections(World world, Random random, int x, int z, BiomeGrid biomes){
-        // TODO: Use maxWorldHeight here
         if (!planets.containsKey(world)) {
             planets.put(world, new ArrayList<Planetoid>());
         }
@@ -119,9 +118,6 @@ public class PlanetsChunkGenerator extends ChunkGenerator {
                                     }
                                     if (xShell || zShell || yShell) {
                                         ArrayList<MaterialData> list = new ArrayList<MaterialData>(curPl.shellBlkIds);
-                                        //TODO Test-fix the NPE by adding something to the ArrayList... what is MaterialData?!
-                                        // https://hub.spigotmc.org/javadocs/spigot/org/bukkit/material/MaterialData.html
-                                        // list.add(0, ???);
                                         MaterialData get = list.get(random.nextInt(list.size()));
                                         setBlock(retVal, chunkX, worldY, chunkZ, (byte) get.getItemTypeId());
                                         if (get.getData() != 0) { //Has data
@@ -239,12 +235,11 @@ public class PlanetsChunkGenerator extends ChunkGenerator {
                         noHeat = true;
                         break outer;
                     default:
+                        // Lol, we weren't even TRYING to give the Planetoid core blocks => NPE
+                        // I wonder when this was broken like this
+                        curPl.coreBlkIds = getBlockTypes(rand, true, noHeat);
                 }
             }
-            
-            // Lol, we weren't even TRYING to give the Planetoid core blocks => NPE
-            // I wonder when this was broken like this
-            curPl.coreBlkIds = getBlockTypes(rand, true, noHeat);
 
             curPl.shellThickness = rand.nextInt(maxShellSize - minShellSize) + minShellSize;
             curPl.radius = rand.nextInt(maxSize - minSize) + minSize;
@@ -301,7 +296,7 @@ public class PlanetsChunkGenerator extends ChunkGenerator {
         if (ConfigHandler.getGenerateSchematics(ID)) {
             populators.add(new SpaceSchematicPopulator());
         }
-        else if (ConfigHandler.getGenerateBlackHolesNonSpout(ID)){
+        else if (ConfigHandler.getGenerateBlackHoles(ID)){
             populators.add(new SpaceBlackHolePopulator());
         }
         populators.add(new SpaceDataPopulator());
@@ -370,6 +365,7 @@ public class PlanetsChunkGenerator extends ChunkGenerator {
 
             if(newMat != null){//Vanilla material
                 if (newMat.isBlock()) {
+                    // TODO: Non-deprecated alternative? as well as to other MaterialDatas in the source...
                     matDatas.add(new MaterialData(newMat, (byte) data));
                 } else {
                     MessageHandler.print(Level.WARNING, newMat.toString() + " is not a block");
@@ -448,6 +444,7 @@ public class PlanetsChunkGenerator extends ChunkGenerator {
 
     @Override
     public Location getFixedSpawnLocation(World world, Random random) {
+        // TODO: figure out if it's our fault or MV's fault that this is not used...
         return new Location(world, 7, 78, 7);
     }
     

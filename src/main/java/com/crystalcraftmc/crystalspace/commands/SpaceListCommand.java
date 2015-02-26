@@ -1,8 +1,6 @@
 // Package Declaration
 package com.crystalcraftmc.crystalspace.commands;
 
-// Java Imports
-
 import com.crystalcraftmc.crystalspace.Space;
 import com.crystalcraftmc.crystalspace.handlers.LangHandler;
 import com.crystalcraftmc.crystalspace.handlers.MessageHandler;
@@ -15,6 +13,7 @@ import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
 
 /**
  * Represents "/space list".
@@ -49,6 +48,10 @@ public class SpaceListCommand extends SpaceCommand {
         getSender().sendMessage(ChatColor.GOLD + Space.getPrefix() + " " + LangHandler.getListOfSpaceMessage());
         List<String> spaceWorlds = new ArrayList<String>();
         for (World world : WorldHandler.getSpaceWorlds()) {
+            if (world == null) {
+                MessageHandler.debugPrint(Level.SEVERE, "world is null in SpaceListCommand! :(");
+                continue;
+            }
             spaceWorlds.add(world.getName());
         }
         getSender().sendMessage(ChatColor.GRAY + spaceWorlds.toString().replace("]", "").replace("[", ""));

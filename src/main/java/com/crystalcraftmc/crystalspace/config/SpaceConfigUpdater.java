@@ -1,8 +1,6 @@
 // Package Declaration
 package com.crystalcraftmc.crystalspace.config;
 
-// Java Imports
-
 import com.crystalcraftmc.crystalspace.handlers.LangHandler;
 import com.crystalcraftmc.crystalspace.handlers.MessageHandler;
 import org.bukkit.Bukkit;
@@ -11,15 +9,12 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import java.io.File;
 import java.io.IOException;
 import java.util.logging.Level;
-
-// CrystalSpace Imports
-// Bukkit Imports
-
 /**
  * Converts old pre-v2 worlds into v2 IDs.
  * 
  * @author iffa
  */
+@Deprecated
 public class SpaceConfigUpdater {
     // Variables
     private static boolean hadToBeUpdated = false;

@@ -1,8 +1,6 @@
 // Package Declaration
 package com.crystalcraftmc.crystalspace.listeners.misc;
 
-// Java Imports
-
 import com.crystalcraftmc.crystalspace.handlers.WorldHandler;
 import com.crystalcraftmc.crystalspace.wgen.populators.SpaceBlackHolePopulator;
 import org.bukkit.Bukkit;

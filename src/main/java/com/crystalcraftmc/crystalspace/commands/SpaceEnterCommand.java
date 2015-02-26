@@ -1,8 +1,6 @@
 // Package Declaration
 package com.crystalcraftmc.crystalspace.commands;
 
-// Java Imports
-
 import com.crystalcraftmc.crystalspace.Space;
 import com.crystalcraftmc.crystalspace.economy.Economy;
 import com.crystalcraftmc.crystalspace.handlers.LangHandler;
@@ -19,9 +17,6 @@ import org.bukkit.event.player.PlayerTeleportEvent.TeleportCause;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
-
-// CrystalSpace Imports
-// Bukkit Imports
 
 /**
  * Represents "/space enter [spaceworld]".
@@ -69,6 +64,9 @@ public class SpaceEnterCommand extends SpaceCommand {
                 if (SpaceExitCommand.enterDest.containsKey(player)) {
                     location = SpaceExitCommand.enterDest.get(player);
                 } else {
+                    if (WorldHandler.getSpaceWorlds().get(0) == null) {
+                        MessageHandler.debugPrint(Level.SEVERE, "Entry #0 in getSpaceWorlds() is null!");
+                    }
                     location = WorldHandler.getSpaceWorlds().get(0).getSpawnLocation();
                 }
                 MessageHandler.debugPrint(Level.INFO, "Teleported player '" + player.getName() + "' to space.");

@@ -1,8 +1,6 @@
 // Package Declaration
 package com.crystalcraftmc.crystalspace.runnables;
 
-// CrystalSpace Imports
-
 import com.crystalcraftmc.crystalspace.api.event.misc.SpaceSuffocationEvent;
 import com.crystalcraftmc.crystalspace.handlers.MessageHandler;
 import com.crystalcraftmc.crystalspace.handlers.PlayerHandler;
@@ -11,8 +9,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
 import java.util.logging.Level;
-
-// Bukkit Imports
 
 /**
  * A runnable class for suffocating.

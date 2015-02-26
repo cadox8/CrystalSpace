@@ -1,5 +1,6 @@
 // Package Declaration
 package com.crystalcraftmc.crystalspace.listeners.misc;
+import com.crystalcraftmc.crystalspace.api.SpaceWorldHandler;
 import com.crystalcraftmc.crystalspace.handlers.ConfigHandler;
 import com.crystalcraftmc.crystalspace.handlers.MessageHandler;
 import com.crystalcraftmc.crystalspace.handlers.WorldHandler;
@@ -35,6 +36,9 @@ public class SpaceWorldListener implements Listener {
             WorldHandler.startForceNightTask(world);
             MessageHandler.debugPrint(Level.INFO, "Started night forcing task for world '" + world.getName() + "'.");
         }
+        
+        // Adding to spaceWorlds in SpaceWorldHandler
+        WorldHandler.addSpaceWorld(world.getName());
     }
     
     @EventHandler(priority = EventPriority.MONITOR)

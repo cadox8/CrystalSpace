@@ -1,8 +1,6 @@
 // Package Declaration
 package com.crystalcraftmc.crystalspace.listeners;
 
-// Java Imports
-
 import com.crystalcraftmc.crystalspace.api.SpacePlayerHandler;
 import com.crystalcraftmc.crystalspace.handlers.ConfigHandler;
 import com.crystalcraftmc.crystalspace.handlers.MessageHandler;
@@ -16,9 +14,6 @@ import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
 import org.bukkit.event.entity.EntityDeathEvent;
 
 import java.util.logging.Level;
-
-// CrystalSpace Imports
-// Bukkit Imports
 
 /**
  * EntityListener.

@@ -1,8 +1,6 @@
 // Package Declaration
 package com.crystalcraftmc.crystalspace.wgen.populators;
 
-// Java Imports
-
 import com.crystalcraftmc.crystalspace.api.schematic.Schematic;
 import com.crystalcraftmc.crystalspace.api.schematic.SpaceSchematicHandler;
 import com.crystalcraftmc.crystalspace.handlers.ConfigHandler;
@@ -14,9 +12,6 @@ import org.bukkit.generator.BlockPopulator;
 
 import java.util.Random;
 import java.util.logging.Level;
-
-// CrystalSpace Imports
-// Bukkit Imports
 
 /**
  * Populates a world with schematics.

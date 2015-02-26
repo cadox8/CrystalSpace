@@ -25,6 +25,7 @@ maxShellSize: 20
 # Can be in the following formats:
 #   - WOOL:12 *FULLY QUALIFIED NAME
 #   - 43:12   *VANILLA
+#   - STONE,DIRT-1.0 *MULTIPLE NAMES with probability
 #   - 1654:12 *(NOT A VANILLA ID)
 blocks:
     # 1 is 100%; 0 is 0%
@@ -43,6 +44,8 @@ blocks:
     - MOSSY_COBBLESTONE-0.3
     - WOOL-0.4
     - GLASS-0.9
+    # TODO: Fix "new" blocks e.g. Quartz not being recognized even by ID? Bukkit limitation? :/
+    - 155:0-1.0
     # Planet cores & probabilities
     cores:
     - PUMPKIN-0.8

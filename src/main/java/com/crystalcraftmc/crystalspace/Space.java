@@ -85,7 +85,7 @@ public class Space extends JavaPlugin {
         SpaceSchematicHandler.loadSchematics();
 
         // Loading space worlds (startup).
-        WorldHandler.loadSpaceWorlds();
+        //WorldHandler.loadSpaceWorlds();
 
         // Initializing the CommandExecutor for /space.
         sce = new SpaceCommandHandler(this);
@@ -169,7 +169,6 @@ public class Space extends JavaPlugin {
             return new PlanetsChunkGenerator("planets");
         }
         //TODO check if id is in ids.yml
-        // ^ Still a TODO?
         return new PlanetsChunkGenerator(id);
     }
 

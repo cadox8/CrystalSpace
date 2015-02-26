@@ -1,7 +1,6 @@
 // Package Declaration
 package com.crystalcraftmc.crystalspace.api.event.misc;
 
-// Bukkit Imports
 import org.bukkit.command.CommandSender;
 import org.bukkit.event.Cancellable;
 import org.bukkit.event.Event;

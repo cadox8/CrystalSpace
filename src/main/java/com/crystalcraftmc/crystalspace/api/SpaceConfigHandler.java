@@ -16,6 +16,7 @@ import java.util.logging.Level;
 /**
  * Static methods handle configuration.
  * External use only
+ * TODO: Put defaults back to use! (currently commented out... needs some refactoring for it to work)
  *
  * @author iffa
  * @author Jack
@@ -360,12 +361,13 @@ public class SpaceConfigHandler {
      *
      * @return True if generating black holes without spout
      */
-    public static boolean getGenerateBlackHolesNonSpout(String id) {
+    public static boolean getGenerateBlackHoles(String id) {
+        // TODO: clean up any leftover Spout-related naming etc.
         if (id.equalsIgnoreCase("planets")  ) {
-            return SpaceConfig.getConfig(ConfigFile.IDS).getBoolean("ids." + id + ".generation.nonspoutblackholes");
+            return SpaceConfig.getConfig(ConfigFile.IDS).getBoolean("ids." + id + ".generation.generateblackholes");
             //return (Boolean) NONSPOUT_BLACKHOLES.getDefault();
         }
-        return SpaceConfig.getConfig(ConfigFile.IDS).getBoolean("ids." + id + ".generation.nonspoutblackholes");
+        return SpaceConfig.getConfig(ConfigFile.IDS).getBoolean("ids." + id + ".generation.generateblackholes");
         //return SpaceConfig.getConfig(ConfigFile.IDS).getBoolean("ids." + id + ".generation.nonspoutblackholes", (Boolean) SPOUT_BLACKHOLES.getDefault());
     }
 
