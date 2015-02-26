@@ -50,7 +50,8 @@
             <url>https://hub.spigotmc.org/nexus/content/groups/public/</url>
         </repository>
     </repositories>
-    
+
+    <!-- Continuous Integration Server -->
     <ciManagement>
         <system>jenkins</system>
         <url>http://ci.crystalcraftmc.com/job/CrystalSpace/</url>
