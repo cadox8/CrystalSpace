@@ -22,45 +22,45 @@ commands:
           /<command> <back> - Go back where you were
           /<command> <list> - Lists all spaceworlds (loaded with config.yml)
           /<command> <help> - Shows help (usage)
-          /<command> <about> - About bSpace
+          /<command> <about> - About CrystalSpace
 
 # Permission nodes
 permissions:
   
   # All command permissions group
-  bSpace.commands.*:
-    description: Access to all bSpace commands.
+  CrystalSpace.commands.*:
+    description: Access to all CrystalSpace commands.
     children:
-      bSpace.teleport.*: true
+      CrystalSpace.teleport.*: true
   
   # Ignores
-  bSpace.ignore.*:
+  CrystalSpace.ignore.*:
     description: Access to all ignore permissions (no suit check, black hole effects etc.).
     children:
-      bSpace.ignoresuitchecks: true
-      bSpace.ignoreblackholes: true
+      CrystalSpace.ignoresuitchecks: true
+      CrystalSpace.ignoreblackholes: true
   
   # Teleport
-  bSpace.teleport.*:
+  CrystalSpace.teleport.*:
     description: Access to all teleportation commands.
     children:
-      bSpace.teleport.enter: true
-      bSpace.teleport.exit: true
-      bSpace.teleport.list: true
+      CrystalSpace.teleport.enter: true
+      CrystalSpace.teleport.exit: true
+      CrystalSpace.teleport.list: true
   
   # Single permissions
-  bSpace.teleport.enter:
+  CrystalSpace.teleport.enter:
     description: Allows teleporting to space.
     default: op
-  bSpace.teleport.exit:
+  CrystalSpace.teleport.exit:
     description: Allows teleporting out of space.
     default: op
-  bSpace.teleport.list:
+  CrystalSpace.teleport.list:
     description: Allows requesting list of spaceworlds.
     default: op
-  bSpace.ignoresuitchecks:
+  CrystalSpace.ignoresuitchecks:
     description: Ignores all suit and helmet checks for the player.
     default: false
-  bSpace.ignoreblackholes:
+  CrystalSpace.ignoreblackholes:
     description: Ignores all black holes (i.e. they will not suck) for the player.
     default: false

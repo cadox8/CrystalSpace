@@ -15,7 +15,7 @@ import java.util.EnumMap;
 import java.util.Map;
 import java.util.logging.Level;
 
-// bSpace Imports
+// CrystalSpace Imports
 // Bukkit Imports
 
 /**
@@ -106,10 +106,12 @@ public class SpaceConfig {
             loaded.put(configFile, true);
         } else {
             try {
-/*                File makeSchematics = new File(Bukkit.getServer().getPluginManager().getPlugin("CrystalSpace").getDataFolder() + File.separator + "schematics");
+                // Making schematics folder
+                File makeSchematics = new File(Bukkit.getServer().getPluginManager().getPlugin("CrystalSpace").getDataFolder() + File.separator + "schematics");
                 if (!makeSchematics.exists()) {
                     makeSchematics.mkdirs();
-                }*/
+                }
+                
                 Bukkit.getServer().getPluginManager().getPlugin("CrystalSpace").getDataFolder().mkdir();
                 Bukkit.getServer().getPluginManager().getPlugin("CrystalSpace").getDataFolder().mkdir();
                 fileMap.get(configFile).getParentFile().mkdir();

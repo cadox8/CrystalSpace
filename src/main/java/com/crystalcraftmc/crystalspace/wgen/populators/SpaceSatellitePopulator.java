@@ -11,7 +11,7 @@ import org.bukkit.generator.BlockPopulator;
 
 import java.util.Random;
 
-// bSpace Imports
+// CrystalSpace Imports
 // Bukkit Imports
 
 /**

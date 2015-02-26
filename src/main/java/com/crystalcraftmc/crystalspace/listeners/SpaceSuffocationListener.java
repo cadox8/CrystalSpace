@@ -23,7 +23,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
 
-// bSpace Imports
+// CrystalSpace Imports
 // Bukkit Imports
 
 /**
@@ -104,7 +104,7 @@ public class SpaceSuffocationListener implements Listener {
      * @param world the world
      */
     public static void startSuffocating(Player player, World world) {
-        if (player.hasPermission("bSpace.ignoresuitchecks")) {
+        if (player.hasPermission("CrystalSpace.ignoresuitchecks")) {
             return;
         }
         String id = ConfigHandler.getID(world);

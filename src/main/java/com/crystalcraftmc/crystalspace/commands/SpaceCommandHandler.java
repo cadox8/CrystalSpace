@@ -13,7 +13,7 @@ import org.bukkit.entity.Player;
 
 import java.util.logging.Level;
 
-// bSpace Imports
+// CrystalSpace Imports
 // Bukkit Imports
 
 /**
@@ -28,7 +28,7 @@ public class SpaceCommandHandler implements CommandExecutor {
     /**
      * Constructor for SpaceCommandHandler.
      * 
-     * @param plugin bSpace instance
+     * @param plugin CrystalSpace instance
      */
     public SpaceCommandHandler(Space plugin) {
         this.plugin = plugin;

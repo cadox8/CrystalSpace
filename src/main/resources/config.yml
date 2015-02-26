@@ -1,4 +1,4 @@
-# bSpace v3.0.0-ALPHA Main Configuration File
+# CrystalSpace v3.0.0-ALPHA Main Configuration File
 # ----------------------------------------
 #     This configuration has a pretty      
 #    huge amount of documentation, but     
@@ -32,7 +32,7 @@ global:
 economy:
   # True if economy should be enabled
   enabled: false
-  # Enter and exit costs (when using bSpace's commands)
+  # Enter and exit costs (when using CrystalSpace's commands)
   entercommandcost: 20
   exitcommandcost: 20
   # Enter and exit costs

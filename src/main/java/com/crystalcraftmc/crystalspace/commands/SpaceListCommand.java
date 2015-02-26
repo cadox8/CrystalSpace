@@ -16,9 +16,6 @@ import org.bukkit.entity.Player;
 import java.util.ArrayList;
 import java.util.List;
 
-// bSpace Imports
-// Bukkit Imports
-
 /**
  * Represents "/space list".
  * 
@@ -28,7 +25,7 @@ public class SpaceListCommand extends SpaceCommand {
     /**
      * Constructor of SpaceListCommand.
      * 
-     * @param plugin bSpace instance
+     * @param plugin CrystalSpace instance
      * @param sender Command sender
      * @param args Command arguments
      */
@@ -41,7 +38,7 @@ public class SpaceListCommand extends SpaceCommand {
      */
     @Override
     public void command() {
-        if (!PlayerHandler.hasPermission("bSpace.teleport.list", (Player) this.getSender())) {
+        if (!PlayerHandler.hasPermission("CrystalSpace.teleport.list", (Player) this.getSender())) {
             MessageHandler.sendNoPermissionMessage((Player) getSender());
             return;
         }

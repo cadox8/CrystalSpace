@@ -28,7 +28,7 @@ import java.util.Map;
 import java.util.logging.Level;
 
 /**
- * Main class of bSpace.
+ * Main class of CrystalSpace.
  *
  * @author iffa
  * @author kitskub
@@ -200,7 +200,7 @@ public class Space extends JavaPlugin {
     /**
      * Gets the location cache.
      *
-     * @return Location cach
+     * @return Location cache
      */
     public static Map<Player, Location> getLocCache() {
         return locCache;

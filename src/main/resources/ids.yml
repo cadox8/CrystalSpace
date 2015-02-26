@@ -1,4 +1,4 @@
-# bSpace v2.3 - IDs File
+# CrystalSpace v3.0.0-ALPHA - IDs File
 # ----------------------------------------
 #     This configuration has a pretty      
 #    huge amount of documentation, but     
@@ -17,7 +17,7 @@ ids:
 #            generateasteroids: true
 #            generatesatellites: true
 #            generatefloor: true
-#            # If this is true, bSpace will look for schematics in plugins/bSpace/schematics! These will be used in world generation.
+#            # If this is true, CrystalSpace will look for schematics in plugins/CrystalSpace/schematics! These will be used in world generation.
 #            generateschematics: true
 #            # From 1-200. These can be turned off with the generateasteroids-setting.
 #            glowstonechance: 1

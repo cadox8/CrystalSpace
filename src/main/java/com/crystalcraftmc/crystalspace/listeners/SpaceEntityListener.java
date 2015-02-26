@@ -17,7 +17,7 @@ import org.bukkit.event.entity.EntityDeathEvent;
 
 import java.util.logging.Level;
 
-// bSpace Imports
+// CrystalSpace Imports
 // Bukkit Imports
 
 /**

@@ -20,7 +20,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
 
-// bSpace Imports
+// CrystalSpace Imports
 // Bukkit Imports
 
 /**
@@ -35,7 +35,7 @@ public class SpaceEnterCommand extends SpaceCommand {
     /**
      * Constructor of SpaceEnterCommand.
      * 
-     * @param plugin bSpace instance
+     * @param plugin CrystalSpace instance
      * @param sender Command sender
      * @param args Command arguments
      */
@@ -50,7 +50,7 @@ public class SpaceEnterCommand extends SpaceCommand {
     public void command() {
         Player player = (Player) this.getSender();
         if (getArgs().length == 1) {
-            if (PlayerHandler.hasPermission("bSpace.teleport.enter", player)) {
+            if (PlayerHandler.hasPermission("CrystalSpace.teleport.enter", player)) {
                 if (WorldHandler.getSpaceWorlds().isEmpty()) {
                     player.sendMessage(ChatColor.RED + LangHandler.getNoSpaceLoaded());
                     return;
@@ -78,7 +78,7 @@ public class SpaceEnterCommand extends SpaceCommand {
             MessageHandler.sendNoPermissionMessage(player);
             return;
         } else if (getArgs().length >= 2) {
-            if (PlayerHandler.hasPermission("bSpace.teleport.enter", player)) {
+            if (PlayerHandler.hasPermission("CrystalSpace.teleport.enter", player)) {
                 if (!Economy.enterCommand(player)) {
                     MessageHandler.sendNotEnoughMoneyMessage(player);
                     return;

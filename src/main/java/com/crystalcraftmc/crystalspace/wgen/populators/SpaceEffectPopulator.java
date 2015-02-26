@@ -15,7 +15,7 @@ import java.util.Random;
 /**
  * Populates a world with end portal blocks around bedrock.
  * 
- * @author iffamies
+ * @author iffa
  */
 public class SpaceEffectPopulator extends BlockPopulator {
 

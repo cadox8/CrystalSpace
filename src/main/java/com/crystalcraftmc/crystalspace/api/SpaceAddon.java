@@ -9,13 +9,13 @@ package com.crystalcraftmc.crystalspace.api;
 public interface SpaceAddon {
     
     /**
-     * Called when bSpace is enabled
+     * Called when CrystalSpace is enabled
     */
     //public void onSpaceEnable();
     
     /**
      * 
-     * Called when bSpace is disabled
+     * Called when CrystalSpace is disabled
      */
     public void onSpaceDisable();
 }

@@ -1,8 +1,5 @@
 // Package Declaration
 package com.crystalcraftmc.crystalspace.listeners.misc;
-
-// Java Imports
-
 import com.crystalcraftmc.crystalspace.handlers.ConfigHandler;
 import com.crystalcraftmc.crystalspace.handlers.MessageHandler;
 import com.crystalcraftmc.crystalspace.handlers.WorldHandler;
@@ -15,14 +12,10 @@ import org.bukkit.event.world.WorldLoadEvent;
 import org.bukkit.event.world.WorldUnloadEvent;
 
 import java.util.logging.Level;
-
-// bSpace Imports
-// Bukkit Imports
-
 /**
  * Listener for world load events etc.
  *
- * @author iffamies
+ * @author iffa
  */
 public class SpaceWorldListener implements Listener {
 

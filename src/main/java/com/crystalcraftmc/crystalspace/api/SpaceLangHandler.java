@@ -1,17 +1,17 @@
 // Package Declaration
 package com.crystalcraftmc.crystalspace.api;
 
-// bSpace Imports
+// CrystalSpace Imports
 import com.crystalcraftmc.crystalspace.Space;
 import com.crystalcraftmc.crystalspace.config.SpaceConfig;
 
 /**
  * Useful methods to get localized strings from lang.yml. Try keeping params to a minimum!
- * Oh, and you can use this if you ever need bSpace's default strings :).
+ * Oh, and you can use this if you ever need CrystalSpace's default strings :).
  *
  * External use only
  * 
- * @author iffamies
+ * @author iffa
  */
 public class SpaceLangHandler {
     /* General Strings */

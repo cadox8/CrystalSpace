@@ -60,7 +60,7 @@ public class SpacePlayerHandler {
 			boots_material = Material.matchMaterial(armortype + "_BOOTS");
 			if (chestplate_material == null) {
 				MessageHandler.print(Level.SEVERE, "Invalid armortype '" + armortype + "' in config!");
-				player.sendMessage(ChatColor.RED + "Nag at server owner: Invalid armortype in bSpace config!");
+				player.sendMessage(ChatColor.RED + "Nag at server owner: Invalid armortype in CrystalSpace config!");
 				return;
 			}
 			chestplate = new ItemStack(chestplate_material);
@@ -86,7 +86,7 @@ public class SpacePlayerHandler {
 		ItemStack helmet = toItemStack(ConfigHandler.getHelmet());
 		if (helmet == null){
 			MessageHandler.print(Level.SEVERE, "Invalid helmet '" + ConfigHandler.getHelmet() + "' in config!");
-			player.sendMessage(ChatColor.RED + "Nag at server owner: Invalid helmet in bSpace config!");
+			player.sendMessage(ChatColor.RED + "Nag at server owner: Invalid helmet in CrystalSpace config!");
 			return;
 		}
         player.getInventory().setHelmet(helmet);

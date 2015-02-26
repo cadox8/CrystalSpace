@@ -16,21 +16,21 @@ import java.io.FileInputStream;
 import java.util.*;
 import java.util.logging.Level;
 
-// bSpace Imports
+// CrystalSpace Imports
 // Bukkit Imports
 // JNBT Imports
 
 /**
  * Schematic-file loading class. To be used for populators
  * 
- * @author iffamies
+ * @author iffa
  * @author kitskub
  * @author DrAgonmoray (original NBT loading code)
  * @author sk89q and other people who accidently a WE commit (schematic handling)
  */
 public class SpaceSchematicHandler {
     // Variables
-    public static File schematicFolder = new File("plugins" + File.separator + "bSpace" + File.separator + "schematics");
+    public static File schematicFolder = new File("plugins" + File.separator + "CrystalSpace" + File.separator + "schematics");
     private static List<Schematic> schematics = new ArrayList<Schematic>();
 
     /**
@@ -86,7 +86,7 @@ public class SpaceSchematicHandler {
     }
     
     /**
-     * Loads all schematics from plugins/bSpace/schematics.
+     * Loads all schematics from plugins/CrystalSpace/schematics.
      */
     public static void loadSchematics() {
         List<File> files = Arrays.asList(new File("plugins" + File.separator + "CrystalSpace" + File.separator + "schematics").listFiles());
@@ -144,8 +144,8 @@ public class SpaceSchematicHandler {
     @SuppressWarnings("unchecked")
     public static void loadSchematic(File file) {
         try{
-			FileInputStream fis = new FileInputStream(file);
-			NBTInputStream nbt = new NBTInputStream(fis);
+            FileInputStream fis = new FileInputStream(file);
+            NBTInputStream nbt = new NBTInputStream(fis);
             Schematic schematic = loadSchematic(file.getName().replaceAll(".schematic", ""), nbt);
             if (nbt != null) {
                 nbt.close();

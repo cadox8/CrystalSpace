@@ -1,7 +1,7 @@
 // Package Declaration
 package com.crystalcraftmc.crystalspace.runnables;
 
-// bSpace Imports
+// CrystalSpace Imports
 
 import com.crystalcraftmc.crystalspace.api.event.misc.SpaceSuffocationEvent;
 import com.crystalcraftmc.crystalspace.handlers.MessageHandler;
