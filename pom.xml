@@ -51,11 +51,10 @@
         </repository>
     </repositories>
     
-    <!-- Continious Integration - will make a return later
     <ciManagement>
         <system>jenkins</system>
-        <url>http://ci.chrisgward.com</url>
-    </ciManagement> -->
+        <url>http://ci.crystalcraftmc.com/job/CrystalSpace/</url>
+    </ciManagement>
     
     <!-- Dependencies -->
     <dependencies>
