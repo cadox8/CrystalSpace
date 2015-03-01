@@ -9,7 +9,7 @@ As more information is made available, this README file will be updated to inclu
 The CrystalCraftMC Development Team consists of three people: jflory7, Jacc734, Jwood9198.
 
 CrystalCraftMC Build Server (Coming Soon)
-[Original bSpace on BukkitDev](http://dev.bukkit.org/bukkit-plugins/bananaspace/pages/main/)
+[Original bSpace on BukkitDev](http://dev.bukkit.org/bukkit-plugins/bananaspace/)
 
 ## Conventions From Original README
 
