@@ -218,7 +218,7 @@ public class PlanetsChunkGenerator extends ChunkGenerator {
             // Try to make a planet
             Planetoid curPl = new Planetoid();
             curPl.shellBlkIds = getBlockTypes(rand, false, true);
-            boolean noHeat = false;
+            //boolean noHeat = false;
             outer:
             for (MaterialData d : curPl.shellBlkIds) {//Circumstances
                 if (d.getItemType() == null) {//Not vanilla
@@ -232,12 +232,10 @@ public class PlanetsChunkGenerator extends ChunkGenerator {
                         curPl.coreBlkIds = new HashSet<MaterialData>(Collections.singleton(new MaterialData(Material.WATER)));// If there's ice, use water? Not final
                         break outer;
                     case WOOL:
-                        noHeat = true;
+                        curPl.coreBlkIds = getBlockTypes(rand, true, true);
                         break outer;
                     default:
-                        // Lol, we weren't even TRYING to give the Planetoid core blocks => NPE
-                        // I wonder when this was broken like this
-                        curPl.coreBlkIds = getBlockTypes(rand, true, noHeat);
+                        curPl.coreBlkIds = getBlockTypes(rand, true, false);
                 }
             }
 
