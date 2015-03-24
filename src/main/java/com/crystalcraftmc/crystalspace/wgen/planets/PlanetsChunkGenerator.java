@@ -358,12 +358,14 @@ public class PlanetsChunkGenerator extends ChunkGenerator {
             else{
                 name = mat;
             }
-            MessageHandler.print(Level.INFO, "Trying to match material with name: " + name);
+            MessageHandler.debugPrint(Level.INFO, "Trying to match material with name: " + name);
             Material newMat = Material.matchMaterial(name);
 
             if(newMat != null){//Vanilla material
                 if (newMat.isBlock()) {
                     // TODO: Non-deprecated alternative? as well as to other MaterialDatas in the source...
+                    // https://bukkit.org/threads/so-block-setdata-is-deprecated-whats-the-new-way-to-change-the-data-of-an-existing-block.189076/
+                    // No easy way to use a non-dprecated method ^
                     matDatas.add(new MaterialData(newMat, (byte) data));
                 } else {
                     MessageHandler.print(Level.WARNING, newMat.toString() + " is not a block");
