@@ -31,7 +31,7 @@ public class SpaceWorldHandler {
     private static Map<World, Integer> forcenightId = new HashMap<World, Integer>();
 
     /**
-     * Loads the space worlds into <code>spaceWorldNames</code.
+     * Loads the space worlds into <code>spaceWorldNames</code>.
      */
     /*
     public static void loadSpaceWorlds() {
