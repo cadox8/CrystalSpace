@@ -1,4 +1,4 @@
-// Package Declaation
+// Package Declaration
 package com.crystalcraftmc.crystalspace.handlers;
 
 import com.crystalcraftmc.crystalspace.api.SpaceWorldHandler;
