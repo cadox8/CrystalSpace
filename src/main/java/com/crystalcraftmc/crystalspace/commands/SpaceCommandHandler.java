@@ -1,8 +1,6 @@
 // Package Declaration
 package com.crystalcraftmc.crystalspace.commands;
 
-// Java Imports
-
 import com.crystalcraftmc.crystalspace.Space;
 import com.crystalcraftmc.crystalspace.api.event.misc.SpaceCommandEvent;
 import com.crystalcraftmc.crystalspace.handlers.MessageHandler;
@@ -12,9 +10,6 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import java.util.logging.Level;
-
-// CrystalSpace Imports
-// Bukkit Imports
 
 /**
  * Handles sending the command ahead to the SpaceCommand-objects.

@@ -1,7 +1,6 @@
 // Package Declaration
 package com.crystalcraftmc.crystalspace.runnables;
 
-// Bukkit Imports
 import org.bukkit.World;
 
 /**

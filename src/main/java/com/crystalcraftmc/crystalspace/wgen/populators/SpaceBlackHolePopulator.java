@@ -1,8 +1,6 @@
 // Package Declaration
 package com.crystalcraftmc.crystalspace.wgen.populators;
 
-// Java Imports
-
 import com.crystalcraftmc.crystalspace.handlers.ConfigHandler;
 import org.bukkit.Chunk;
 import org.bukkit.World;

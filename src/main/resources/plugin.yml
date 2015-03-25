@@ -6,7 +6,7 @@ main: com.crystalcraftmc.crystalspace.Space
 name: CrystalSpace
 url: https://github.com/CrystalCraftMC/CrystalSpace
 #TODO dev-url: http://dev.bukkit.org/server-mods/bSpace
-#TODO jenkins-url: http://ci.chrisgward.com/jobs/bSpace
+jenkins-url: http://ci.crystalcraftmc.com/job/CrystalSpace/
 
 # Load on startup for bukkit.yml, and all that support
 load: startup

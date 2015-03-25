@@ -1,12 +1,8 @@
 // Package Declaration
 package com.crystalcraftmc.crystalspace.commands;
 
-// CrystalSpace Imports
-
 import com.crystalcraftmc.crystalspace.Space;
 import org.bukkit.command.CommandSender;
-
-// Bukkit Imports
 
 /**
  * Represents "/space args".

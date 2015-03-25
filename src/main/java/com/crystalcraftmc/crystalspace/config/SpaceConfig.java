@@ -1,8 +1,6 @@
 // Package Declaration
 package com.crystalcraftmc.crystalspace.config;
 
-// Java Imports
-
 import com.crystalcraftmc.crystalspace.api.schematic.SpaceSchematicHandler;
 import com.crystalcraftmc.crystalspace.handlers.LangHandler;
 import com.crystalcraftmc.crystalspace.handlers.MessageHandler;
@@ -14,9 +12,6 @@ import java.io.*;
 import java.util.EnumMap;
 import java.util.Map;
 import java.util.logging.Level;
-
-// CrystalSpace Imports
-// Bukkit Imports
 
 /**
  * A class that handles the configuration file.
@@ -218,9 +213,6 @@ public class SpaceConfig {
         DEBUGGING(false),
         REQUIRE_SUIT(false),
         ARMOR_TYPE("iron"),
-        USE_SPOUT(true),
-        TEXTURE_PACK("https://github.com/downloads/iffa/bSpace/spacetexture.zip"),
-        BLACKHOLE_TEXTURE("http://i.imgur.com/zVBCZ.png"),
         CLOUDS(false),
         USE_TEXTURE_PACK(true),
         HELMET_GIVEN(false),
@@ -233,8 +225,9 @@ public class SpaceConfig {
         GRAVITY(true),
         STOPDROWNING(true),
         // ConfigFile.IDS
-        HOSTILE_MOBS_ALLOWED(false),
-        NEUTRAL_MOBS_ALLOWED(true),
+        // Are these handled by the world manager nowadays? Couldn't find an implementation of these in our code
+        //HOSTILE_MOBS_ALLOWED(false),
+        //NEUTRAL_MOBS_ALLOWED(true),
         FORCE_NIGHT(true),
         HELMET("86"),
         CHESTPLATE("133"),
@@ -249,9 +242,8 @@ public class SpaceConfig {
         SATELLITE_CHANCE(1),
         GENERATE_PLANETS(true),
         GENERATE_SCHEMATICS(true),
+        GENERATE_BLACKHOLES(true),
         BLACKHOLE_CHANCE(8),
-        SPOUT_BLACKHOLES(true),
-	    NONSPOUT_BLACKHOLES(true),
         SCHEMATIC_CHANCE(5),
         // ConfigFile.DEFAULT_PLANETS
         DENSITY(15000),

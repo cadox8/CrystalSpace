@@ -1,8 +1,6 @@
 // Package Declaration
 package com.crystalcraftmc.crystalspace.listeners;
 
-// Java Imports
-
 import com.crystalcraftmc.crystalspace.api.event.area.AreaEnterEvent;
 import com.crystalcraftmc.crystalspace.api.event.area.AreaLeaveEvent;
 import com.crystalcraftmc.crystalspace.api.event.area.SpaceEnterEvent;
@@ -20,9 +18,6 @@ import org.bukkit.event.player.*;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
-
-// CrystalSpace Imports
-// Bukkit Imports
 
 /**
  * PlayerListener for general space related actions.

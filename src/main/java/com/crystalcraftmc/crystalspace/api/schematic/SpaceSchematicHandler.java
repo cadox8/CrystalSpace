@@ -1,8 +1,6 @@
 // Package Declaration
 package com.crystalcraftmc.crystalspace.api.schematic;
 
-// Java Imports
-
 import com.crystalcraftmc.crystalspace.handlers.MessageHandler;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -15,10 +13,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.util.*;
 import java.util.logging.Level;
-
-// CrystalSpace Imports
-// Bukkit Imports
-// JNBT Imports
 
 /**
  * Schematic-file loading class. To be used for populators

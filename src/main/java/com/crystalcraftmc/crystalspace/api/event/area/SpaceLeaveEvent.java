@@ -1,7 +1,6 @@
 // Package Declaration
 package com.crystalcraftmc.crystalspace.api.event.area;
 
-// Bukkit Imports
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.event.HandlerList;

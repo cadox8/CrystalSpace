@@ -1,16 +1,12 @@
 // Package Declaration
 package com.crystalcraftmc.crystalspace.wgen.populators;
 
-// Java Imports
-
 import org.bukkit.Chunk;
 import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.generator.BlockPopulator;
 
 import java.util.Random;
-
-// Bukkit Imports
 
 /**
  * Populates a world with end portal blocks around bedrock.

@@ -33,13 +33,14 @@ public class SpaceWorldHandler {
     /**
      * Loads the space worlds into <code>spaceWorldNames</code.
      */
+    /*
     public static void loadSpaceWorlds() {
         for (World world : Bukkit.getServer().getWorlds()) {
             if (world.getGenerator() instanceof PlanetsChunkGenerator) {
                 spaceWorldNames.add(world.getName());
             }
         }
-    }
+    }*/
 
     /**
      * Starts the force night task if required.
@@ -68,7 +69,9 @@ public class SpaceWorldHandler {
     public static List<World> getSpaceWorlds() {
         List<World> worlds = new ArrayList<World>();
         for (String world : spaceWorldNames) {
-            worlds.add(Bukkit.getServer().getWorld(world));
+            World bukkitWorld = Bukkit.getServer().getWorld(world);
+            if (bukkitWorld == null) continue;
+            worlds.add(bukkitWorld);
         }
         return worlds;
     }
@@ -153,7 +156,8 @@ public class SpaceWorldHandler {
         return "planets";
     }
 
-    private static void addSpaceWorld(String worldName) {
+    public static void addSpaceWorld(String worldName) {
+        if (spaceWorldNames.contains(worldName)) return; // Not adding if it already exists
         spaceWorldNames.add(worldName);
         World world = Bukkit.getWorld(worldName);
         if(world == null) return;
