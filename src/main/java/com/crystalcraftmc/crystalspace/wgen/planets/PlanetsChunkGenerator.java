@@ -125,9 +125,6 @@ public class PlanetsChunkGenerator extends ChunkGenerator {
                                         }
                                     } else {
                                         ArrayList<MaterialData> list = new ArrayList<MaterialData>(curPl.coreBlkIds);
-                                        //TODO Test-fix the NPE by adding something to the ArrayList... what is MaterialData?!
-                                        // https://hub.spigotmc.org/javadocs/spigot/org/bukkit/material/MaterialData.html
-                                        // list.add(0, ???);
                                         // this confuses me too much. this part is setting core blocks, right? how is it "random"?
                                         MaterialData get = list.get(random.nextInt(list.size()));
                                         setBlock(retVal, chunkX, worldY, chunkZ, (byte) get.getItemTypeId());
