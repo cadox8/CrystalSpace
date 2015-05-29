@@ -1,4 +1,4 @@
-# CrystalSpace v3.0-DEVEL
+# CrystalSpace v3.0-DEVEL [![Build Status](https://travis-ci.org/CrystalCraftMC/CrystalSpace.svg)](https://travis-ci.org/CrystalCraftMC/CrystalSpace)
 ### An unofficial effort by the [CrystalCraftMC Development Team](http://crystalcraftmc.com) to revive the functionality of a useful plugin
 
 Welcome to the [CrystalCraftMC](http://crystalcraftmc.com) fork of bSpace. We have decided to make this one of our
