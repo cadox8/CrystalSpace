@@ -87,15 +87,6 @@
             <type>jar</type>
             <scope>provided</scope>
         </dependency>
-        <dependency>
-            <groupId>com.nijikokun</groupId>
-            <artifactId>Register</artifactId>
-            <version>lol</version>
-            <!-- Because we don't have a repo for this dep! -->
-            <scope>system</scope>
-            <!-- TODO: Is this deprecated? can this be removed? -->
-            <systemPath>${project.basedir}/libs/Register.jar</systemPath>
-        </dependency>
     </dependencies>
 
 </project>

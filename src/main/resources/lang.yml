@@ -28,5 +28,4 @@ commands:
 # Other strings
 other:
   nopermission: "You don't have permission!"
-  notenoughmoney: "You don't have enough money!"
   idnotfound: "An ID with the name '{idname}' does not exist in the config!"

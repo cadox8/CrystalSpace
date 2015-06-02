@@ -18,7 +18,6 @@
 package com.crystalcraftmc.crystalspace.commands;
 
 import com.crystalcraftmc.crystalspace.Space;
-import com.crystalcraftmc.crystalspace.economy.Economy;
 import com.crystalcraftmc.crystalspace.handlers.LangHandler;
 import com.crystalcraftmc.crystalspace.handlers.MessageHandler;
 import com.crystalcraftmc.crystalspace.handlers.PlayerHandler;
@@ -71,10 +70,7 @@ public class SpaceEnterCommand extends SpaceCommand {
                     MessageHandler.debugPrint(Level.INFO, player.getName() + "tried to use /space enter, but he was already in that space world.");
                     return;
                 }
-                if (!Economy.enterCommand(player)) {
-                    MessageHandler.sendNotEnoughMoneyMessage(player);
-                    return;
-                }
+                
                 exitDest.put(player, player.getLocation());
                 Location location;
                 if (SpaceExitCommand.enterDest.containsKey(player)) {
@@ -93,10 +89,6 @@ public class SpaceEnterCommand extends SpaceCommand {
             return;
         } else if (getArgs().length >= 2) {
             if (PlayerHandler.hasPermission("CrystalSpace.teleport.enter", player)) {
-                if (!Economy.enterCommand(player)) {
-                    MessageHandler.sendNotEnoughMoneyMessage(player);
-                    return;
-                }
                 if (Bukkit.getServer().getWorld(getArgs()[1]) == null) {
                     player.sendMessage(ChatColor.RED + LangHandler.getWorldNotFoundMessage());
                     return;

@@ -18,7 +18,6 @@
 package com.crystalcraftmc.crystalspace.commands;
 
 import com.crystalcraftmc.crystalspace.Space;
-import com.crystalcraftmc.crystalspace.economy.Economy;
 import com.crystalcraftmc.crystalspace.handlers.LangHandler;
 import com.crystalcraftmc.crystalspace.handlers.MessageHandler;
 import com.crystalcraftmc.crystalspace.handlers.PlayerHandler;
@@ -62,10 +61,6 @@ public class SpaceExitCommand extends SpaceCommand {
         Player player = (Player) getSender();
         if (WorldHandler.isInAnySpace(player)) {
             if (PlayerHandler.hasPermission("CrystalSpace.teleport.exit", player)) {
-                if (!Economy.exitCommand(player)) {
-                    MessageHandler.sendNotEnoughMoneyMessage(player);
-                    return;
-                }
                 enterDest.put(player, player.getLocation());
                 Location location;
                 if (SpaceEnterCommand.exitDest.containsKey(player)) {

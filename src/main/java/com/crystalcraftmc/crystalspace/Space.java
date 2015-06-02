@@ -21,9 +21,7 @@ import com.crystalcraftmc.crystalspace.api.SpaceAddon;
 import com.crystalcraftmc.crystalspace.api.schematic.SpaceSchematicHandler;
 import com.crystalcraftmc.crystalspace.commands.SpaceCommandHandler;
 import com.crystalcraftmc.crystalspace.config.SpaceConfig;
-import com.crystalcraftmc.crystalspace.economy.Economy;
 import com.crystalcraftmc.crystalspace.handlers.*;
-import com.crystalcraftmc.crystalspace.listeners.SpaceEconomyListener;
 import com.crystalcraftmc.crystalspace.listeners.SpaceEntityListener;
 import com.crystalcraftmc.crystalspace.listeners.SpacePlayerListener;
 import com.crystalcraftmc.crystalspace.listeners.SpaceSuffocationListener;
@@ -58,12 +56,10 @@ public class Space extends JavaPlugin {
     private static Map<Player, Boolean> jumpPressed = new HashMap<Player, Boolean>();
     private PluginManager pm;
     private SpaceCommandHandler sce = null;
-    private Economy economy;
     private final SpaceEntityListener entityListener = new SpaceEntityListener();
     private final SpaceWorldListener worldListener = new SpaceWorldListener();
     private final SpacePlayerListener playerListener = new SpacePlayerListener();
     private final SpaceSuffocationListener suffocationListener = new SpaceSuffocationListener(this);
-    private final SpaceEconomyListener economyListener = new SpaceEconomyListener();
 
     /**
      * Called when the plugin is disabled.
@@ -114,13 +110,6 @@ public class Space extends JavaPlugin {
             }
         }
 
-        // Checking if Economy is ok.
-        if (economy == null && getServer().getPluginManager().getPlugin("Register") != null) {
-            if (Economy.checkEconomy()) {
-                economy = new Economy();
-            }
-        }
-
         // Finishing up enablation.
         MessageHandler.print(Level.INFO, LangHandler.getUsageStatsMessage());
         try {
@@ -153,7 +142,6 @@ public class Space extends JavaPlugin {
         pm.registerEvents(entityListener, this);
         pm.registerEvents(playerListener, this);
         pm.registerEvents(suffocationListener, this);
-        pm.registerEvents(economyListener, this);
         MessageHandler.debugPrint(Level.INFO, "Registered events (entity & player).");
     }
 
@@ -233,14 +221,5 @@ public class Space extends JavaPlugin {
      */
     public static String getVersion() {
         return version;
-    }
-
-    /**
-     * Gets the Economy-class.
-     *
-     * @return Economy
-     */
-    public Economy getEconomy() {
-        return economy;
     }
 }
