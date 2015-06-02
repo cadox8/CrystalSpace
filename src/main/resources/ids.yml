@@ -23,3 +23,23 @@ ids:
             required: false
         maxroomheight: 5
         alwaysnight: true
+    # Generate everything
+    default:
+        generation:
+            generateplanets: true
+            generateasteroids: true
+            generatesatellites: true
+            generatefloor: true
+            generateschematics: true
+            generateblackholes: true
+            glowstonechance: 1
+            stonechance: 3
+            satellitechance: 1
+            schematicchance: 5
+            blackholechance: 8
+        suit:
+            required: false
+        helmet:
+            required: false
+        maxroomheight: 5
+        alwaysnight: true

@@ -21,7 +21,6 @@ import com.crystalcraftmc.crystalspace.api.SpaceAddon;
 import com.crystalcraftmc.crystalspace.api.schematic.SpaceSchematicHandler;
 import com.crystalcraftmc.crystalspace.commands.SpaceCommandHandler;
 import com.crystalcraftmc.crystalspace.config.SpaceConfig;
-import com.crystalcraftmc.crystalspace.config.SpaceConfigUpdater;
 import com.crystalcraftmc.crystalspace.economy.Economy;
 import com.crystalcraftmc.crystalspace.handlers.*;
 import com.crystalcraftmc.crystalspace.listeners.SpaceEconomyListener;
@@ -90,9 +89,7 @@ public class Space extends JavaPlugin {
 
         // Loading configuration files.
         SpaceConfig.loadConfigs();
-        MessageHandler.debugPrint(Level.INFO, "Loaded configuration files, now checking if they need to be updated...");
-        // Updating configuration files (if needed).
-        SpaceConfigUpdater.updateConfigs();
+        MessageHandler.debugPrint(Level.INFO, "Loaded configuration files");
 
         // Registering events.
         registerEvents();
@@ -127,10 +124,9 @@ public class Space extends JavaPlugin {
         // Finishing up enablation.
         MessageHandler.print(Level.INFO, LangHandler.getUsageStatsMessage());
         try {
-            Metrics metrics = new Metrics();
-            metrics.beginMeasuringPlugin(this);
+            Metrics metrics = new Metrics(this);
+            metrics.start();
         } catch (IOException e) {
-            // Fail silently
             MessageHandler.debugPrint(Level.WARNING, "Failed to contact Metrics (usage stats)");
         }
         MessageHandler.print(Level.INFO, LangHandler.getEnabledMessage());
