@@ -20,7 +20,7 @@
 
     <groupId>com.crystalcraftmc.crystalspace</groupId>
     <artifactId>CrystalSpace</artifactId>
-    <version>3.0.0-ALPHA-5</version>
+    <version>3.0.0-ALPHA-6</version>
     <name>CrystalSpace</name>
     <url>https://github.com/CrystalCraftMC/CrystalSpace</url>
 
@@ -41,7 +41,6 @@
                             <include>ids.yml</include>
                             <include>lang.yml</include>
                             <include>planets.yml</include>
-                            <include>bspace.png</include>
                         </includes>
                     </resource>
                 </resources>
@@ -78,12 +77,12 @@
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
-            <version>1.8.6-R0.1-SNAPSHOT</version>
+            <version>1.8.8-R0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.bukkit</groupId>
             <artifactId>bukkit</artifactId>
-            <version>1.8.6-R0.1-SNAPSHOT</version>
+            <version>1.8.8-R0.1-SNAPSHOT</version>
             <type>jar</type>
             <scope>provided</scope>
         </dependency>
