@@ -51,7 +51,7 @@ public class SpaceAboutCommand extends SpaceCommand {
                     ChatColor.GOLD + getPlugin().getDescription().getVersion());
             getSender().sendMessage(ChatColor.GOLD + "-" + ChatColor.GRAY + " There are currently " +
                     ChatColor.GOLD + WorldHandler.getSpaceWorlds().size() + ChatColor.GRAY + " space worlds loaded.");
-        } else if (getArgs().length < 3 && getArgs().equals("developers")) {
+        } else if (getArgs().length < 3 && getArgs()[1].equals("developers")) {
             getSender().sendMessage(ChatColor.GOLD + "-" + ChatColor.GRAY + " Core Developers:");
             getSender().sendMessage(ChatColor.GOLD + "    jflory7, iffa");
         }
