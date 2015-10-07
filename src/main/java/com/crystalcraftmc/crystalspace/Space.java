@@ -35,7 +35,6 @@ import org.bukkit.generator.ChunkGenerator;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
@@ -54,12 +53,64 @@ public class Space extends JavaPlugin {
     private static String version;
     private static Map<Player, Location> locCache = null;
     private static Map<Player, Boolean> jumpPressed = new HashMap<Player, Boolean>();
-    private PluginManager pm;
-    private SpaceCommandHandler sce = null;
     private final SpaceEntityListener entityListener = new SpaceEntityListener();
     private final SpaceWorldListener worldListener = new SpaceWorldListener();
     private final SpacePlayerListener playerListener = new SpacePlayerListener();
     private final SpaceSuffocationListener suffocationListener = new SpaceSuffocationListener(this);
+    private PluginManager pm;
+    private SpaceCommandHandler sce = null;
+
+    /**
+     * Gets the jump pressed value. (ie = wtf is this)
+     *
+     * @param player Player
+     *
+     * @return Jump pressed
+     */
+    public static boolean getJumpPressed(Player player) {
+        return jumpPressed.get(player);
+    }
+
+    /**
+     * Sets the jump pressed value. (ie = wtf is this ??)
+     *
+     * @param player Player
+     * @param newJumpPressed New jump pressed value
+     */
+    public static void setJumpPressed(Player player, boolean newJumpPressed) {
+        jumpPressed.put(player, newJumpPressed);
+    }
+
+    /**
+     * Gets the location cache.
+     *
+     * @return Location cache
+     */
+    public static Map<Player, Location> getLocCache() {
+        return locCache;
+    }
+
+    /**
+     * Gets the plugin's prefix.
+     *
+     * @return Prefix
+     */
+    public static String getPrefix() {
+        return prefix;
+    }
+
+    /**
+     * Gets the plugin's version.
+     *
+     * @return Version
+     */
+    public static String getVersion() {
+        return version;
+    }
+
+    /*
+     * Some API methods
+     */
 
     /**
      * Called when the plugin is disabled.
@@ -112,12 +163,6 @@ public class Space extends JavaPlugin {
 
         // Finishing up enablation.
         MessageHandler.print(Level.INFO, LangHandler.getUsageStatsMessage());
-        try {
-            Metrics metrics = new Metrics(this);
-            metrics.start();
-        } catch (IOException e) {
-            MessageHandler.debugPrint(Level.WARNING, "Failed to contact Metrics (usage stats)");
-        }
         MessageHandler.print(Level.INFO, LangHandler.getEnabledMessage());
     }
 
@@ -170,56 +215,5 @@ public class Space extends JavaPlugin {
         }
         //TODO check if id is in ids.yml
         return new PlanetsChunkGenerator(id);
-    }
-
-    /*
-     * Some API methods
-     */
-    /**
-     * Gets the jump pressed value. (ie = wtf is this)
-     *
-     * @param player Player
-     *
-     * @return Jump pressed
-     */
-    public static boolean getJumpPressed(Player player) {
-        return jumpPressed.get(player);
-    }
-
-    /**
-     * Sets the jump pressed value. (ie = wtf is this ??)
-     *
-     * @param player Player
-     * @param newJumpPressed New jump pressed value
-     */
-    public static void setJumpPressed(Player player, boolean newJumpPressed) {
-        jumpPressed.put(player, newJumpPressed);
-    }
-
-    /**
-     * Gets the location cache.
-     *
-     * @return Location cache
-     */
-    public static Map<Player, Location> getLocCache() {
-        return locCache;
-    }
-
-    /**
-     * Gets the plugin's prefix.
-     *
-     * @return Prefix
-     */
-    public static String getPrefix() {
-        return prefix;
-    }
-
-    /**
-     * Gets the plugin's version.
-     *
-     * @return Version
-     */
-    public static String getVersion() {
-        return version;
     }
 }
