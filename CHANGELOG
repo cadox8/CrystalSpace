@@ -1,3 +1,16 @@
+v3.0
+-----------------------------------------
+Not yet released, this is an ongoing changelog.
+
+ (added/modified/removed features)
+    - Support for Spigot 1.9+
+
+ (fixes)
+
+ (code changes)
+    - All Spout features stripped and removed (Spout is dead)
+    - Class reorganization and cleanup (classes once present may no longer exist)
+
 v2.5
 -----------------------------------------
  (added/modified/removed features)
